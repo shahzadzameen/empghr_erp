@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include empg_erp *.css
+recursive-include empg_erp *.csv
+recursive-include empg_erp *.html
+recursive-include empg_erp *.ico
+recursive-include empg_erp *.js
+recursive-include empg_erp *.json
+recursive-include empg_erp *.md
+recursive-include empg_erp *.png
+recursive-include empg_erp *.py
+recursive-include empg_erp *.svg
+recursive-include empg_erp *.txt
+recursive-exclude empg_erp *.pyc
