@@ -1,0 +1,1854 @@
+[
+ {
+  "background_color": null, 
+  "chart_type": null, 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"BIRTHDAY_WIDGET_FOR_BAYUT\")", 
+  "disabled": 0, 
+  "display_order": 9, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Upcoming Birthday's", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:49:25.655517", 
+  "name": "WID-00014", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT\n\tCONCAT(e.`first_name`,\n            ' ',\n            IF(e.`last_name` IS NULL, '', e.`last_name`)) as `fullname`,\n\te.date_of_birth AS `date`, 'upcoming' as type\nFROM\n  `tabEmployee` AS e\nWHERE DATE_ADD(\n    date_of_birth,\n    INTERVAL YEAR(CURDATE()) - YEAR(e.date_of_birth) + IF(\n      DAYOFYEAR(CURDATE()) > DAYOFYEAR(e.date_of_birth),\n      1,\n      0\n    ) YEAR\n  ) BETWEEN CURDATE()\n  AND DATE_ADD(CURDATE(), INTERVAL 5 DAY) \n  AND DATE_ADD(e.date_of_birth, INTERVAL YEAR(CURDATE())-YEAR(e.date_of_birth) YEAR) <> CURDATE()\n  AND e.status = 'Active'\n  @FILTER_ST@ AND IF(@Get User Role For Upcoming Birthday@ IN ('line manager', 'HR Manager'),`reports_to` = @Login code for bayut upcoming birthday@,TRUE) @FILTER_END@\n  ORDER BY e.date_of_birth;", 
+  "redirect_url": null, 
+  "report": "WR-00014", 
+  "roles": [
+   {
+    "parent": "WID-00014", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00014", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00014", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00014", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }
+  ], 
+  "tabs": [], 
+  "template": "calendar_list", 
+  "title": "Upcoming Birthday Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00014", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00014", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Upcoming Birthday Widget", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": null, 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"BIRTHDAY_WIDGET_FOR_BAYUT\")", 
+  "disabled": 0, 
+  "display_order": 8, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Birthday's Today", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:49:45.268415", 
+  "name": "WID-00013", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT\n   CONCAT(`first_name`,\n            ' ',\n            IF(`last_name` IS NULL, '', `last_name`)) AS fullname,\n    DATE_FORMAT(NOW(), '%M %D, %Y') AS `date`,\n    'birthday' AS type\nFROM\n   `tabEmployee`\nWHERE\n   MONTH(date_of_birth) = MONTH(NOW())\n       AND DAY(date_of_birth) = DAY(NOW())\n       AND `status` = 'Active'\n@FILTER_ST@ AND IF(@Get User Role For Birthday@ IN ('line manager', 'HR Manager'),`reports_to` = @Login code for bayut birthday@,TRUE) @FILTER_END@\nORDER BY date_of_birth;", 
+  "redirect_url": null, 
+  "report": "WR-00013", 
+  "roles": [
+   {
+    "parent": "WID-00013", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00013", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00013", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }, 
+   {
+    "parent": "WID-00013", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }
+  ], 
+  "tabs": [], 
+  "template": "calendar_list", 
+  "title": "Birthday Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00013", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00013", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Birthday Widget", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": null, 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"BIRTHDAY_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 8, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": null, 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:49:04.899612", 
+  "name": "WID-00009", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    CONCAT(`first_name`,\n            ' ',\n            IF(`middle_name` IS NULL, '', `middle_name`),\n            ' ',\n            IF(`last_name` IS NULL, '', `last_name`)) AS fullname,\n    DATE_FORMAT(NOW(), '%M %D, %Y') AS `date`,\n    'birthday' AS type\nFROM\n    `tabEmployee`\nWHERE\n    MONTH(date_of_birth) = MONTH(NOW())\n        AND DAY(date_of_birth) = DAY(NOW())\n        AND department = (SELECT \n            `department`\n        FROM\n            `tabEmployee`\n        WHERE\n            `name` = @Login ID for birthday@)\n        AND `status` = 'Active'    \nORDER BY date_of_birth;", 
+  "redirect_url": null, 
+  "report": "WR-00009", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "calendar_list", 
+  "title": "Birthday Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00009", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00009", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Birthday Widget", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": null, 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"BIRTHDAY_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 9, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": null, 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:48:47.250416", 
+  "name": "WID-00011", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT\n\tCONCAT(e.`first_name`,\n            ' ',\n            IF(e.`middle_name` IS NULL, '', e.`middle_name`),\n            ' ',\n            IF(e.`last_name` IS NULL, '', e.`last_name`)) as `fullname`,\n\te.date_of_birth AS `date`, 'upcoming' as type\nFROM\n  `tabEmployee` AS e\nWHERE DATE_ADD(\n    date_of_birth,\n    INTERVAL YEAR(CURDATE()) - YEAR(e.date_of_birth) + IF(\n      DAYOFYEAR(CURDATE()) >= DAYOFYEAR(e.date_of_birth),\n      1,\n      0\n    ) YEAR\n  ) BETWEEN CURDATE()\n  AND DATE_ADD(CURDATE(), INTERVAL 5 DAY) \n  AND e.department = (SELECT `department` FROM `tabEmployee` WHERE `name`=@Login id for upcoming birthday@)\n  AND e.status = 'Active'\n  ORDER BY e.date_of_birth;", 
+  "redirect_url": null, 
+  "report": "WR-00011", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "calendar_list", 
+  "title": "Upcoming Birthday Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00011", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00011", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Upcoming Birthday Widget", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": null, 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"DAILY_SHIFT_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 11, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": null, 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-17 16:35:45.239170", 
+  "name": "WID-00006", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT attendance_date, attendance_status, TIME_FORMAT(shift_start_time,'%h:%i:%s') as shift_start_time, \nTIME_FORMAT(shift_end_time,'%h:%i:%s') as shift_end_time,ats.color FROM tabAttendance at \nLEFT JOIN `tabRoster Status` ats \nON ats.name = at.attendance_status \nwhere employee = @Get Login Employee Code By Daily@ \nAND at.docstatus=1 AND MONTH(attendance_date) = MONTH(now());", 
+  "redirect_url": null, 
+  "report": "WR-00006", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "calendar", 
+  "title": "Daily shift", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00006", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Daily shift", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": null, 
+  "data_function": "completion_bar", 
+  "depends_on": "get_config_by_name(\"PROFILE_COMPLETION_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 12, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Profile Completion Status", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-17 16:34:54.185087", 
+  "name": "WID-00012", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "select IFNULL(\n\t(SELECT ROUND(profile_score, 1) as score FROM tabEmployee where name = @Get Employee Code By Profile@),\n    0) as score;", 
+  "redirect_url": "#Form/Employee/@employee_code@", 
+  "report": "WR-00012", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "completion_bar", 
+  "title": "Profile Completion Meter", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00012", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Profile Completion Meter", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#f7bb61", 
+  "chart_type": null, 
+  "data_function": "calculate_reward", 
+  "depends_on": "get_config_by_name(\"EARNED_LEAVES_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 5, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Earned Leaves", 
+  "height": null, 
+  "icon": "fa fa-trophy text-warning fa-4x", 
+  "modified": "2019-10-17 16:34:26.967253", 
+  "name": "WID-00007", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    IF(reward is NULL, 0, SUM(reward)) as reward\nFROM\n    (SELECT \n        apr.unit_value_to - SUM(ep.value) AS `reward`,\n            `apr`.`name` AS `apr_name`\n    FROM\n        `tabAttendance Penalties Processed` AS `epp`\n    INNER JOIN `tabEmployee Attendance Penalties` AS `ep` ON epp.month = ep.month\n        AND epp.year = ep.year\n        AND epp.employee = ep.employee\n    INNER JOIN `tabAttendance Policy Rules` AS `apr` ON apr.name = ep.attendance_policy_rules\n    WHERE\n        (ep.`employee` =@Get Employee Code By Reward@ AND ep.year = YEAR(NOW())\n            AND ep.penalty = 0)\n    GROUP BY `ep`.`name`) AS `t`;", 
+  "redirect_url": null, 
+  "report": "WR-00007", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "inner_box_list", 
+  "title": "Earned For Year", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00007", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Earned For Year", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-4 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#56bf83", 
+  "chart_type": null, 
+  "data_function": "calculate_penalty", 
+  "depends_on": "get_config_by_name(\"REMAINING_MINUTES_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 6, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": null, 
+  "height": null, 
+  "icon": "fa fa-hourglass-start text-green fa-4x", 
+  "modified": "2019-10-17 16:33:50.086508", 
+  "name": "WID-00008", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT 1 as data", 
+  "redirect_url": null, 
+  "report": "WR-00008", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "inner_box_list", 
+  "title": "Remaining Minutes", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00008", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Remaining Minutes", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-4 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#959fff", 
+  "chart_type": null, 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"MY_TEAM_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 1, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Active", 
+  "height": null, 
+  "icon": "fa fa-group text-primary fa-4x", 
+  "modified": "2019-10-17 16:35:20.599983", 
+  "name": "WID-00001", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT COUNT(case when node.status = 'Active' then node.name end) total,\nCOUNT(case when node.status = 'Left' then node.name end) as `value`,\n\"left\" as title\n                                FROM tabEmployee AS node\n                                INNER JOIN tabEmployee AS parent\n                                WHERE node.lft > parent.lft AND node.lft < parent.rgt\n                                        AND parent.name = @Get Login Employee Code By Team@", 
+  "redirect_url": "#List/Employee/List", 
+  "report": "WR-00001", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "ColumnInnerBoxBookmark", 
+  "title": "My Team", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00001", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "My Team", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-4 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#F68788", 
+  "chart_type": null, 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"PENDING_LEAVES_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 2, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Pending Leaves", 
+  "height": null, 
+  "icon": "fa fa-calendar text-danger fa-4x", 
+  "modified": "2019-10-17 16:34:09.814259", 
+  "name": "WID-00002", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT COUNT(total_leave_days) as total, @Get Login Employee Code By Pending Leaves@ as Employee_code\nFROM `tabLeave Application`\nwhere status = 'Open' AND employee = @Get Login Employee Code By Pending Leaves@;", 
+  "redirect_url": "#List/Leave Application/List?status=Open&employee=@Employee_code@", 
+  "report": "WR-00002", 
+  "roles": [], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Pending Leaves", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00002", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Pending Leaves", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-4 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#ade17f", 
+  "chart_type": null, 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"LEAVES_PENDING_FOR_APPROVAL\")", 
+  "disabled": 0, 
+  "display_order": 3, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Leaves Pending For Approval", 
+  "height": null, 
+  "icon": "fa fa-calendar-minus-o text-success fa-4x", 
+  "modified": "2019-10-17 16:36:31.338923", 
+  "name": "WID-00003", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT COUNT(total_leave_days) as total\nFROM `tabLeave Application` \nwhere status = \"Open\" AND leave_approver = @Get Login User Email@;", 
+  "redirect_url": "#List/Leave%20Application/List?status=Open", 
+  "report": "WR-00003", 
+  "roles": [], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Leaves Pending For Approval", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00003", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Leaves Pending For Approval", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-4 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#b89aff", 
+  "chart_type": null, 
+  "data_function": "inner_box_list", 
+  "depends_on": "get_config_by_name(\"LEAVES_AVAILABLE_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 4, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Leaves Available", 
+  "height": null, 
+  "icon": "fa fa-calendar-plus-o text-info fa-4x", 
+  "modified": "2019-10-17 16:36:51.273955", 
+  "name": "WID-00004", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    IF(lt.display_name IS NULL,\n        lt.name,\n        lt.display_name) AS title,\n    lt.name leave_name,\n    t.total_applied,\n    SUM(tla.total_leaves_allocated) allocated,\n    ROUND(IFNULL(IF(SUM(tla.total_leaves_allocated) IS NULL,\n                        0 - IFNULL(t.total_applied,0),\n                        SUM(tla.total_leaves_allocated) - IFNULL(t.total_applied,0)),\n                    0),\n            2) value\nFROM\n    `tabLeave Type` lt\n        LEFT JOIN\n    (SELECT \n        a.leave_type,\n            IFNULL(SUM(a.total_leave_days), 0) total_applied\n    FROM\n        `tabLeave Application` a\n    WHERE\n        a.employee = @LoggedIn Employee Code By Leaves Available@\n            AND a.status = 'approved'\n            AND a.docstatus = 1\n            AND YEAR(a.from_date) = YEAR(NOW())\n            AND YEAR(a.to_date) = YEAR(NOW())\n    GROUP BY a.leave_type) t ON lt.name = t.leave_type\n        LEFT JOIN\n    `tabLeave Allocation` tla ON tla.leave_type = lt.name\n        AND YEAR(tla.from_date) = YEAR(NOW())\n        AND YEAR(tla.to_date) = YEAR(NOW())\n        AND tla.docstatus = 1\n        AND tla.employee = @LoggedIn Employee Code By Leaves Available@\nGROUP BY lt.name\nHAVING value <> 0 OR allocated <> 0;", 
+  "redirect_url": "#List/Leave%20Allocation/List", 
+  "report": "WR-00004", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "inner_box_list", 
+  "title": "Leaves Available Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00004", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Leaves Available Widget", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-4 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": null, 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"HOLIDAY_CALENDAR_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 7, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "My Holiday Calendar", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:49:15.101007", 
+  "name": "WID-00005", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    IF(hl.name IS NOT NULL,\n        h.holiday_date,\n        ch.holiday_date) AS holiday_date,\n    IF(hl.name IS NOT NULL,\n        h.description,\n        ch.description) AS description,\n    \"holiday\" as type\nFROM\n    tabEmployee e\n        LEFT JOIN\n    `tabHoliday List` hl ON hl.name = e.holiday_list\n        LEFT JOIN\n    `tabHoliday` h ON h.parent = hl.name\n        LEFT JOIN\n    `tabCompany` c ON c.name = e.company\n        LEFT JOIN\n    `tabHoliday List` chl ON chl.name = c.default_holiday_list\n        LEFT JOIN\n    `tabHoliday` ch ON ch.parent = chl.name\nWHERE\n    e.name = @Get Employee Code By Holiday Calendar@ \n    AND (year(h.holiday_date) = YEAR(CURDATE()) OR year(ch.holiday_date) = YEAR(CURDATE()))\nGROUP BY holiday_date;", 
+  "redirect_url": null, 
+  "report": "WR-00005", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "", 
+  "title": "Holiday Calendar", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00005", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00005", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Holiday Calendar", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": null, 
+  "data_function": "assign_data", 
+  "depends_on": null, 
+  "disabled": 0, 
+  "display_order": 10, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Company Announcements", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 12:15:57.435138", 
+  "name": "WID-00010", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    title,\n    document,\n    DATE_FORMAT(d.creation, '%Y-%m-%d') AS `date`,\n    'announcement' as type\nFROM\n    `tabAnnouncement` AS d\n        LEFT JOIN\n    `tabEmployee` AS e ON d.`company` = e.`company`\n        OR d.`company` IS NULL\nWHERE\n    e.`name` = @Get Login Employee Code By Announcement@\nORDER BY d.creation DESC limit 5;", 
+  "redirect_url": null, 
+  "report": "WR-00010", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "calendar_list", 
+  "title": "Company Announcements Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00010", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00010", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Company Announcements Widget", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#f7bb61", 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"OUTSTANDING_TEAM_ANNUAL_LEAVE_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 6, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Outstanding Team Annual Leave", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:18:18.167293", 
+  "name": "WID-00015", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n     ROUND(IFNULL(IF(SUM(la.total_leaves_allocated) IS NULL,\n                         0 - IFNULL(SUM(tla.total_leave_days),0),\n                         SUM(la.total_leaves_allocated) - IFNULL(SUM(tla.total_leave_days),0)),\n                     0),\n             2) as sum\nFROM\n  `tabEmployee` e\n      Left JOIN\n  `tabLeave Allocation` la ON la.employee = e.name\n      AND YEAR(la.from_date) = YEAR(NOW())\n      AND YEAR(la.to_date) = YEAR(NOW())\n      AND la.docstatus = 1\n   INNER JOIN\n  `tabLeave Type` l ON l.name = la.leave_type\n      LEFT JOIN\n  `tabLeave Application` tla ON tla.employee = e.name\n      AND YEAR(tla.from_date) = YEAR(NOW())\n      AND YEAR(tla.to_date) = YEAR(NOW())\n      AND tla.docstatus = 1\n      AND tla.status = 'Approved'\n      AND tla.leave_type = la.leave_type\nWHERE\n  e.reports_to = @Login ID For Annual Leave@\n  AND e.status = 'Active' AND l.name = @Annual Leave Widget Config@\n  group by e.reports_to;", 
+  "redirect_url": "#query-report/Employee%20Leave%20Balance", 
+  "report": "WR-00015", 
+  "roles": [
+   {
+    "parent": "WID-00015", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00015", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00015", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }
+  ], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Outstanding Team Annual Leave", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00015", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Outstanding Team Annual Leave", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"LINE_MANAGER_GUIDES_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 14, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Line Manager Guides", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:50:22.983445", 
+  "name": "WID-00016", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "select document,title, DATE_FORMAT(creation, '%Y-%m-%d') AS `date`, \"guides\" as type from `tabPolicy Document` where parent = @Line Manager Guide Constant@ ORDER BY idx DESC limit 5;", 
+  "redirect_url": "#query-report/Company Documents?document_type=Line Manager Guides", 
+  "report": "WR-00016", 
+  "roles": [
+   {
+    "parent": "WID-00016", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00016", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00016", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }
+  ], 
+  "tabs": [], 
+  "template": "calendar_list", 
+  "title": "Line Manager Guides Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00016", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Line Manager Guides Widget", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"UPCOMING_REVIEWS_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 15, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Upcoming Reviews Widget", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:50:35.536304", 
+  "name": "WID-00017", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    'visa_expiry' AS type,\n    temp.name,\n    MIN(holiday_date) AS holiday_date,\n    temp.employee_name,\n    CONCAT(temp.employee_name,\n            ' - ',\n            SUBSTRING_INDEX(GROUP_CONCAT(temp.template_name\n                        ORDER BY holiday_date ASC\n                        SEPARATOR '|||'),\n                    '|||',\n                    1)) AS description\nFROM\n    (SELECT \n        'visa_expiry' AS type,\n            e.name,\n            t.appraisal_due_days,\n            t.name AS template_name,\n            e.date_of_joining,\n            e.employee_name,\n            DATEDIFF(DATE(NOW()), e.date_of_joining) AS joined_days,\n            e.date_of_joining + INTERVAL t.appraisal_due_days DAY AS holiday_date\n    FROM\n        tabEmployee e\n    INNER JOIN `tabAppraisal Template` t ON t.appraisal_due_days >= @Yearly Review Due Days@\n    LEFT JOIN `tabAppraisal` ta ON ta.`employee` = e.`employee`\n        AND ta.`kra_template` = t.`name`\n        AND ta.start_date <= NOW()\n        AND @Yearly Review Start Date@\n        AND ta.docstatus = 1\n    WHERE\n        e.status = 'Active' AND ta.name IS NULL\n            @FILTER_ST@ AND IF(@Get User Role for Review@ IN ('line manager', 'HR Manager'), e.`reports_to` = @Get User Login for Review@, TRUE) @FILTER_END@\n    HAVING YEAR(holiday_date) >= YEAR(NOW())\n        AND NOW() >= @Yearly Review Start Date@\n        AND NOW() <= @Yearly Review End Date@\n        AND joined_days >= t.appraisal_due_days) temp\nGROUP BY temp.name\nHAVING holiday_date - INTERVAL 7 DAY <= NOW() \nUNION SELECT \n    'visa_expiry' AS type,\n    temp.name,\n    MIN(holiday_date) AS holiday_date,\n    temp.employee_name,\n    CONCAT(temp.employee_name,\n            ' - ',\n            SUBSTRING_INDEX(GROUP_CONCAT(temp.template_name\n                        ORDER BY holiday_date ASC\n                        SEPARATOR '|||'),\n                    '|||',\n                    1)) AS description\nFROM\n    (SELECT \n        'visa_expiry' AS type,\n            e.name,\n            t.appraisal_due_days,\n            t.name AS template_name,\n            e.date_of_joining,\n            e.employee_name,\n            e.date_of_joining + INTERVAL t.appraisal_due_days DAY AS holiday_date\n    FROM\n        tabEmployee e\n    INNER JOIN `tabAppraisal Template` t ON t.appraisal_due_days <= @Yearly Review Due Days@\n    LEFT JOIN `tabAppraisal` ta ON ta.`employee` = e.`employee`\n        AND ta.`kra_template` = t.`name`\n        AND ta.docstatus = 1\n    WHERE\n        e.status = 'Active' AND ta.name IS NULL\n            @FILTER_ST@ AND IF(@Get User Role for Review@ IN ('line manager', 'HR Manager'), e.`reports_to` = @Get User Login for Review@, TRUE) @FILTER_END@\n    HAVING holiday_date > NOW()) temp\nGROUP BY temp.name\nHAVING holiday_date - INTERVAL 7 DAY <= NOW()\nORDER BY holiday_date ASC\nLIMIT 5;", 
+  "redirect_url": null, 
+  "report": "WR-00017", 
+  "roles": [
+   {
+    "parent": "WID-00017", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00017", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00017", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }, 
+   {
+    "parent": "WID-00017", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }
+  ], 
+  "tabs": [], 
+  "template": "", 
+  "title": "Upcoming Reviews Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00017", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00017", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Upcoming Reviews Widget", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"UPCOMING_VISA_EXPIRY\")", 
+  "disabled": 0, 
+  "display_order": 16, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Upcoming Visa Expiry", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:50:09.775327", 
+  "name": "WID-00018", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n   e.employee_name as description,e.visa_expiry_date as holiday_date, \"visa_expiry\" as type\nFROM\n    `tabEmployee` AS e\nWHERE\n    DATEDIFF(e.visa_expiry_date, CURDATE()) >= 0\n        AND DATEDIFF(e.visa_expiry_date, CURDATE()) <= DATEDIFF(DATE_ADD(CURDATE(), INTERVAL 2 MONTH),\n            CURDATE()) AND e.visa_expiry_date IS NOT NULL\t\n        @FILTER_ST@ AND IF(@Get User Role For Visa@ IN ('line manager', 'HR Manager','Employee'),IF(@Get User Role For Visa@ != 'hr user',`employee` = @Get Login ID For Visa@, TRUE),TRUE) @FILTER_END@ \n        AND e.status = 'Active' ORDER BY e.visa_expiry_date ASC limit 5;", 
+  "redirect_url": null, 
+  "report": "WR-00018", 
+  "roles": [
+   {
+    "parent": "WID-00018", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00018", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00018", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }, 
+   {
+    "parent": "WID-00018", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }, 
+   {
+    "parent": "WID-00018", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Employee"
+   }
+  ], 
+  "tabs": [], 
+  "template": "", 
+  "title": "Upcoming Visa Expiry", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00018", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00018", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Upcoming Visa Expiry", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"UPCOMING_PASSPORT_EXPIRY_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 17, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Upcoming Passport Expiry", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:50:00.049587", 
+  "name": "WID-00019", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    e.valid_upto as holiday_date,\n    e.employee_name AS description,\n    'visa_expiry' AS type\nFROM\n    `tabEmployee` AS e\nWHERE\n    DATEDIFF(e.valid_upto, CURDATE()) >= 0\n        AND DATEDIFF(e.valid_upto, CURDATE()) <= DATEDIFF(DATE_ADD(CURDATE(), INTERVAL 7 MONTH),\n            CURDATE())\n        AND e.valid_upto IS NOT NULL\n        AND e.status = 'Active'\n@FILTER_ST@ AND IF(@Get User Role For Passport@ IN ('line manager', 'HR Manager','Employee'),IF(@Get User Role For Passport@ != 'hr user',`employee` = @Get Login ID For Passport@, TRUE),TRUE) @FILTER_END@\n        ORDER BY e.valid_upto ASC\nLIMIT 5;", 
+  "redirect_url": null, 
+  "report": "WR-00019", 
+  "roles": [
+   {
+    "parent": "WID-00019", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }, 
+   {
+    "parent": "WID-00019", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00019", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00019", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00019", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Employee"
+   }, 
+   {
+    "parent": "WID-00019", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }
+  ], 
+  "tabs": [], 
+  "template": "", 
+  "title": "Upcoming Passport Expiry", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00019", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00019", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Upcoming Passport Expiry", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"DEPENDENT_VISA_EXPIRY_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 19, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Dependent Visa Expiry", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:48:36.499608", 
+  "name": "WID-00020", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n   CONCAT(\n\tdpndt.dependent_name,\n    ' d/o ',\n    e.employee_name,\n    ' - ',\n    e.name\n   ) as description,\n   dpndt.visa_expiry_date as holiday_date,\n   \"visa_expiry\" as type\nFROM\n    `tabEmployee Dependent Visa Detail` AS dpndt\nINNER JOIN `tabEmployee` e ON dpndt.parent = e.`name`\nWHERE\n    DATEDIFF(dpndt.visa_expiry_date, CURDATE()) >= 0\n        AND DATEDIFF(dpndt.visa_expiry_date, CURDATE()) <= DATEDIFF(DATE_ADD(CURDATE(), INTERVAL 2 MONTH),\n            CURDATE()) AND dpndt.visa_expiry_date IS NOT NULL\n        AND e.status = 'Active'\nORDER BY dpndt.visa_expiry_date ASC limit 5;", 
+  "redirect_url": null, 
+  "report": "WR-00020", 
+  "roles": [
+   {
+    "parent": "WID-00020", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00020", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00020", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }, 
+   {
+    "parent": "WID-00020", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }
+  ], 
+  "tabs": [], 
+  "template": "", 
+  "title": "Dependent Visa Expiry", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00020", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Dependent Visa Expiry", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"DEPENDENT_PASSPORT_EXPIRY_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 20, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Dependent Passport Expiry", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:48:29.124520", 
+  "name": "WID-00021", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n   CONCAT(\n\tdpndt.dependent_name,\n    ' d/o ',\n    e.employee_name,\n    ' - ',\n    e.name\n   ) as description,\n   dpndt.passport_expiry_date as holiday_date,\n   \"visa_expiry\" as type\nFROM\n    `tabEmployee Dependent Visa Detail` AS dpndt\nINNER JOIN `tabEmployee` e ON dpndt.parent = e.`name`\nWHERE\n    DATEDIFF(dpndt.passport_expiry_date, CURDATE()) >= 0\n        AND DATEDIFF(dpndt.passport_expiry_date, CURDATE()) <= DATEDIFF(DATE_ADD(CURDATE(), INTERVAL 7 MONTH),\n            CURDATE()) AND dpndt.passport_expiry_date IS NOT NULL\n        AND e.status = 'Active'\nORDER BY dpndt.passport_expiry_date ASC limit 5;", 
+  "redirect_url": null, 
+  "report": "WR-00021", 
+  "roles": [
+   {
+    "parent": "WID-00021", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00021", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00021", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }, 
+   {
+    "parent": "WID-00021", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }
+  ], 
+  "tabs": [], 
+  "template": "", 
+  "title": "Dependent Passport Expiry", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00021", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Dependent Passport Expiry", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": null
+ }, 
+ {
+  "background_color": "#d0b09a", 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"MONTHLY_EMPLOYEE_TURNOVER_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 20, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Monthly Employee Turnover", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 12:23:30.704237", 
+  "name": "WID-00022", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n  concat(\n  IF(\n\t\tCOUNT(IF(shouldIncludeInHeadCount = 1, 1,NULL)) > 0,\n\t\tROUND(COUNT(IF(shouldIncludeInLeaverCount = 1, 1,NULL)) / COUNT(IF(shouldIncludeInHeadCount = 1, 1,NULL)) * 100, 2),\n\t\t0\n\t), ' %')AS total\nFROM\n  (SELECT \n\t CONCAT(YEAR(NOW()), '-', MONTH(NOW()), '-01') AS from_date,\n\t\t  LAST_DAY(NOW()) AS to_date,\n\t\t  emp.`name`,\n\t\t  emp.date_of_joining AS doj,\n\t\t  DATE_FORMAT(CONCAT(YEAR(NOW()), '-', MONTH(NOW()), '-01'), '%M-%Y') AS month_year,\n\t\t  IF(emp.relieving_date IS NULL, emp.date_of_joining <= LAST_DAY(NOW()), emp.date_of_joining <= LAST_DAY(NOW())\n\t\t\t  AND emp.relieving_date >= CONCAT(YEAR(NOW()), '-', MONTH(NOW()), '-01')) AS shouldIncludeInHeadCount,\n\t\t  emp.status <> 'Active' AND emp.relieving_date BETWEEN CONCAT(YEAR(NOW()), '-', MONTH(NOW()), '-01') AND LAST_DAY(NOW()) AS shouldIncludeInLeaverCount\n  FROM\n\t  `tabEmployee` emp\n  WHERE\n\t  emp.reports_to = @Get Login Employee ID For Monthly Employee Turnover@\n  GROUP BY emp.`name` , CONCAT(YEAR(NOW()), '-', MONTH(NOW()), '-01')\n  ORDER BY CONCAT(YEAR(NOW()), '-', MONTH(NOW()), '-01') ASC) AS t\nGROUP BY month_year\nORDER BY from_date ASC;", 
+  "redirect_url": "#query-report/Employee%20Turnover", 
+  "report": "WR-00022", 
+  "roles": [
+   {
+    "parent": "WID-00022", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00022", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }, 
+   {
+    "parent": "WID-00022", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00022", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }, 
+   {
+    "parent": "WID-00022", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }
+  ], 
+  "tabs": [], 
+  "template": "", 
+  "title": "Monthly Employee Turnover", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00022", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00022", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Monthly Employee Turnover", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"YEARLY_EMPLOYEE_TURNOVER_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 7, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Yearly Employee Turnover", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:18:51.988103", 
+  "name": "WID-00023", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "drop temporary table IF EXISTS month_dates;\n\n|||||\n\ncreate temporary table IF NOT EXISTS month_dates (from_date date, to_date date);\n\n|||||\n\nINSERT INTO month_dates (from_date, to_date) VALUES \n(\n\tCONCAT( YEAR(CURDATE()),'-01-01'), CURDATE()\n);\n\n|||||\n\nselect\n\t\tcount(\n\t\t\tIF(shouldIncludeInHeadCount = 1, 1, null)\n\t\t) AS currentTeamMates,\n\t\tcount(\n\t\t\tIF(shouldIncludeInLeaverCount = 1, 1, null)\n\t\t) AS leftTeamMates,\n\t\tCONCAT(IF(\n\t\t\tcount(IF(shouldIncludeInHeadCount = 1, 1, null)) > 0,\n\t\t\tROUND(count(IF(shouldIncludeInLeaverCount = 1, 1, null) ) / count(IF(shouldIncludeInHeadCount = 1, 1, null)) * 100, 2),\n\t\t\t0\n\t\t), ' %') AS total,\n\t\tmonth_year\n\tfrom\n\t\t(\n\tSELECT \n\t\temp.`name`,\n\t\temp.date_of_joining as doj,\n\t\tDATE_FORMAT(md.from_date, \"%M-%Y\") as month_year, \n\t\tDATE_FORMAT(md.from_date, \"%Y\") as _year, \n\t\tIF(\n\t\t\temp.relieving_date is NULL,\n\t\t\temp.date_of_joining <= md.to_date,\n\t\t\temp.date_of_joining <= md.to_date AND emp.relieving_date >= md.from_date\n\t\t) AS shouldIncludeInHeadCount,\n\t\temp.status <> 'Active' AND emp.relieving_date BETWEEN md.from_date AND md.to_date AS shouldIncludeInLeaverCount,\n\t\tmd.from_date\n\tFROM\n\t\tmonth_dates md\n\tINNER JOIN `tabEmployee` emp \n\tWHERE emp.reports_to =  @Get Login Employee ID For Yearly Employee Turnover@\n\tGROUP BY emp.`name`, md.from_date\n\tORDER BY from_date DESC\n    ) AS t\ngroup by month_year\nORDER BY from_date DESC;", 
+  "redirect_url": null, 
+  "report": "WR-00023", 
+  "roles": [
+   {
+    "parent": "WID-00023", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00023", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Administrator"
+   }, 
+   {
+    "parent": "WID-00023", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }
+  ], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Yearly Employee Turnover", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00023", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00023", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Yearly Employee Turnover", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "employee_barchart", 
+  "depends_on": "get_config_by_name(\"EMPLOYEE_MONTHLY_TURNOVER_BARCHART_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 11, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Employee Monthly Turnover", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:20:21.092510", 
+  "name": "WID-00024", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "select PREPARE_DB_FOR_TURNOVER_RPT(CONCAT(YEAR(CURDATE()), '-01-01'));\n\n|||||\n\nselect\n\tcount(\n\t\tIF(shouldIncludeInHeadCount = 1, 1, null)\n\t) AS currentTeamMates,\n\tcount(\n\t\tIF(shouldIncludeInLeaverCount = 1, 1, null)\n\t) AS leftTeamMates,\n\tIF(\n\t\tcount(IF(shouldIncludeInHeadCount = 1, 1, null)) > 0,\n\t\tROUND(count(IF(shouldIncludeInLeaverCount = 1, 1, null) ) / count(IF(shouldIncludeInHeadCount = 1, 1, null)) * 100, 2),\n\t\t0\n\t) AS turnover,\n\tmonth_year\nfrom\n(\n\tSELECT \n\t\temp.`name`,\n\t\temp.date_of_joining as doj,\n\t\tDATE_FORMAT(md.from_date, \"%b,%Y\") as month_year, \n\t\tIF(\n\t\t\temp.relieving_date is NULL,\n\t\t\temp.date_of_joining <= md.to_date,\n\t\t\temp.date_of_joining <= md.to_date AND emp.relieving_date >= md.from_date\n\t\t) AS shouldIncludeInHeadCount,\n\t\temp.status <> 'Active' AND emp.relieving_date BETWEEN md.from_date AND md.to_date AS shouldIncludeInLeaverCount,\n\t\tmd.from_date\n\tFROM\n\t\tmonth_dates md\n\tINNER JOIN `tabEmployee` emp \n\tWHERE emp.reports_to =  @Get Login Employee ID For Employee Monthly Turnover Barchart@\n\tGROUP BY emp.`name`, md.from_date\n\tORDER BY from_date DESC\n) as t\ngroup by month_year\nORDER BY from_date ASC;", 
+  "redirect_url": null, 
+  "report": "WR-00024", 
+  "roles": [
+   {
+    "parent": "WID-00024", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00024", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }
+  ], 
+  "tabs": [], 
+  "template": "employee_barchart", 
+  "title": "Employee Monthly Turnover Barchart", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00024", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00024", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Employee Monthly Turnover Barchart", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-12 col-md-12 clearfix", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "barchart", 
+  "depends_on": "get_config_by_name(\"TEAM_HOLIDAY_AND_LEAVE_BARCHART_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 8, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Team Holiday And Leave", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:19:23.028881", 
+  "name": "WID-00025", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "select GENERATE_CURRENT_WEEK_DATES();\n\n|||||\n\nselect \nt.week_date,\nt.leave_type as leave_type,\nGROUP_CONCAT(t.count order by t.week_date) as leave_counts\nfrom\n(\n\tselect \n\t\t\twd.week_date as week_date,\n\t\t\tDAYNAME(wd.week_date) as week_day,\n            DAY(wd.week_date) as wday,\n\t\t\tlt.`name` as leave_type,\n\t\t\tSUM(\n\t\t\t\tIF(lapp.`name` is not null, 1, 0)\n\t\t\t) as count\n\t\tfrom week_dates wd\n\t\tinner join `tabLeave Type` lt\n\t\tinner join `tabLeave Application` lapp on \n\t\t\tlapp.leave_approver = @Get Login Employee ID For Team Holiday And Leave Barchart@ and lapp.`status` = 'Approved' AND lapp.`docstatus` = 1\n\t\t\tAND wd.week_date BETWEEN lapp.from_date AND lapp.to_date\n\t\t\tAND lapp.leave_type = lt.`name`\n\t\tGROUP BY wd.week_date, lt.`name`\n\tORDER BY lt.`name`, wd.week_date\n) as t\nwhere DAYOFWEEK(t.week_date) <= 5\nGROUP BY t.leave_type;", 
+  "redirect_url": null, 
+  "report": "WR-00025", 
+  "roles": [
+   {
+    "parent": "WID-00025", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00025", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }
+  ], 
+  "tabs": [], 
+  "template": "employee_barchart", 
+  "title": "Team Holiday And Leave Barchart", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00025", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Team Holiday And Leave Barchart", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-12 col-md-12 clearfix", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"GENDER_SPLIT_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 9, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Gender Split", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:19:51.898233", 
+  "name": "WID-00026", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    gender as name, COUNT(name) AS y\nFROM\n    `tabEmployee`\nWHERE\n    status = 'Active'\n    AND IF(@Get User Role for Gender Split@ = 'line manager',`reports_to` = @Get Login Employee ID For Gender Split@,TRUE)\nGROUP BY gender;", 
+  "redirect_url": null, 
+  "report": "WR-00026", 
+  "roles": [
+   {
+    "parent": "WID-00026", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00026", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00026", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00026", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }
+  ], 
+  "tabs": [], 
+  "template": "PiechartBookmark", 
+  "title": "Gender Split widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00026", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00026", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Gender Split widget", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-12 clearfix", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"EMPLOYMENT_STATUS_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 10, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Employment Status", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:20:03.058044", 
+  "name": "WID-00027", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    employment_type as name, COUNT(name) AS y\nFROM\n    `tabEmployee`\nWHERE\n    status = 'Active'\n    AND employment_type is not null\n    AND IF(@Get User Role for Employment Status@ = 'line manager',`reports_to` = @Get Login Employee ID For Employment Status@,TRUE)\nGROUP BY employment_type;", 
+  "redirect_url": null, 
+  "report": "WR-00027", 
+  "roles": [
+   {
+    "parent": "WID-00027", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00027", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00027", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00027", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }
+  ], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Employment Status Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00027", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00027", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Employment Status Widget", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-12", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"REASON_FOR_LEAVING_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 12, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Reason for Leaving", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:20:32.843408", 
+  "name": "WID-00028", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    reason_for_leaving_bayut as name, COUNT(name) AS y\nFROM\n    `tabEmployee`\nWHERE\n    reason_for_leaving_bayut is not null\n    AND YEAR(relieving_date) = YEAR(NOW())\n    @FILTER_ST@ AND IF(@Get User Role for Reason Leaving@ IN ('line manager', 'HR Manager'),`reports_to` = @Get Login Employee ID For Reason Leaving@,TRUE) @FILTER_END@\nGROUP BY reason_for_leaving_bayut;", 
+  "redirect_url": null, 
+  "report": "WR-00028", 
+  "roles": [
+   {
+    "parent": "WID-00028", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00028", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00028", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00028", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }
+  ], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Reason for Leaving Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00028", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00028", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Reason for Leaving Widget", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-12", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"TERMINATION_VS_RESIGNATION_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 13, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": null, 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:20:41.809283", 
+  "name": "WID-00029", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    gender as name, COUNT(name) AS y\nFROM\n    `tabEmployee`\nWHERE\n    status = 'Active'\n    AND IF(@Get User Role for Gender Split@ = 'line manager',`reports_to` = @Get Login Employee ID For Gender Split@,TRUE)\nGROUP BY gender;", 
+  "redirect_url": null, 
+  "report": "WR-00029", 
+  "roles": [
+   {
+    "parent": "WID-00029", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }, 
+   {
+    "parent": "WID-00029", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "System Manager"
+   }, 
+   {
+    "parent": "WID-00029", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR Manager"
+   }, 
+   {
+    "parent": "WID-00029", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "HR User"
+   }
+  ], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Terminations v.s. Resignations", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00029", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00029", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Terminations v.s. Resignations", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-12", 
+  "width": null
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"TASKS_LIST_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 1, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Task List", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 14:15:20.217076", 
+  "name": "WID-00030", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    description, owner, expiry_date, allocated_to_name\nFROM\n    `tabToDo`\nWHERE\n    status = 'Open' \n    AND owner = @Get Login Employee Email For Task List@\n    AND (expiry_date IS NULL OR expiry_date > Date_format(Now(), \"%Y-%m-%d\"));", 
+  "redirect_url": null, 
+  "report": "WR-00030", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "TasklistBookmark", 
+  "title": "Task List", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00030", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Task List", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-12 col-md-12 clearfix", 
+  "width": null
+ }, 
+ {
+  "background_color": "#959fff", 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"MY_TEAM_WIDGET_BAYUT\")", 
+  "disabled": 0, 
+  "display_order": 2, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Active", 
+  "height": null, 
+  "icon": "fa fa-group text-primary fa-4x", 
+  "modified": "2019-10-16 14:15:12.008651", 
+  "name": "WID-00031", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT COUNT(case when node.status = 'Active' then node.name end) total,\nCOUNT(case when node.status = 'Left' then node.name end) as `left`\n                                FROM tabEmployee AS node\n@FILTER_ST@\n                                INNER JOIN tabEmployee AS parent\n                                WHERE node.lft > parent.lft AND node.lft < parent.rgt\n                                        AND parent.name = @Get Login Employee Code By Team Bayut@\n@FILTER_END@", 
+  "redirect_url": "#List/Employee/List", 
+  "report": "WR-00034", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "ColumnInnerBoxBookmark", 
+  "title": "My Team For Bayut", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00031", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "All", 
+    "parent": "WID-00031", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "My Team For Bayut", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#f68788", 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"PENDING_LEAVES_WIDGET_BAYUT\")", 
+  "disabled": 0, 
+  "display_order": 3, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Pending Leaves", 
+  "height": null, 
+  "icon": "fa fa-calendar text-danger fa-4x", 
+  "modified": "2019-10-16 14:16:05.894112", 
+  "name": "WID-00032", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT COUNT(total_leave_days) as total, @Get Login Employee Code By Pending Leaves@ as Employee_code\nFROM `tabLeave Application`\nwhere status = 'Open' AND employee = @Get Login Employee Code By Pending Leaves@;", 
+  "redirect_url": "#List/Leave Application/List?status=Open&employee=@Employee_code@", 
+  "report": "WR-00032", 
+  "roles": [], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Pending Leaves Bayut", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00032", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Pending Leaves Bayut", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#ade17f", 
+  "chart_type": "", 
+  "data_function": null, 
+  "depends_on": "get_config_by_name(\"LEAVES_PENDING_FOR_APPROVAL_BAYUT\")", 
+  "disabled": 0, 
+  "display_order": 4, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Leaves Pending For Approval", 
+  "height": null, 
+  "icon": "fa fa-calendar-minus-o text-success fa-4x", 
+  "modified": "2019-10-16 14:16:32.211798", 
+  "name": "WID-00033", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT COUNT(total_leave_days) as total\nFROM `tabLeave Application` \nwhere status = \"Open\" AND leave_approver = @Get Login User Email@;", 
+  "redirect_url": "#List/Leave%20Application/List?status=Open", 
+  "report": "WR-00033", 
+  "roles": [
+   {
+    "parent": "WID-00033", 
+    "parentfield": "roles", 
+    "parenttype": "Widget", 
+    "role": "Line Manager"
+   }
+  ], 
+  "tabs": [], 
+  "template": null, 
+  "title": "Leaves Pending For Approval Bayut", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00033", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Leaves Pending For Approval Bayut", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": "#b89aff", 
+  "chart_type": "", 
+  "data_function": "inner_box_list", 
+  "depends_on": "get_config_by_name(\"LEAVES_AVAILABLE_WIDGET_BAYUT\")", 
+  "disabled": 0, 
+  "display_order": 5, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "Leaves Available", 
+  "height": null, 
+  "icon": "fa fa-calendar-plus-o text-info fa-4x", 
+  "modified": "2019-10-16 14:17:06.037008", 
+  "name": "WID-00034", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "SELECT \n    IF(lt.display_name IS NULL,\n        lt.name,\n        lt.display_name) AS leave_type,\n    lt.name leave_name,\n    t.total_applied,\n    SUM(tla.total_leaves_allocated) allocated,\n    ROUND(IFNULL(IF(SUM(tla.total_leaves_allocated) IS NULL,\n                        0 - IFNULL(t.total_applied,0),\n                        SUM(tla.total_leaves_allocated) - IFNULL(t.total_applied,0)),\n                    0),\n            2) total\nFROM\n    `tabLeave Type` lt\n        LEFT JOIN\n    (SELECT \n        a.leave_type,\n            IFNULL(SUM(a.total_leave_days), 0) total_applied\n    FROM\n        `tabLeave Application` a\n    WHERE\n        a.employee = @LoggedIn Employee Code By Leaves Available Bayut@\n            AND a.status = 'approved'\n            AND a.docstatus = 1\n            AND YEAR(a.from_date) = YEAR(NOW())\n            AND YEAR(a.to_date) = YEAR(NOW())\n    GROUP BY a.leave_type) t ON lt.name = t.leave_type\n        LEFT JOIN\n    `tabLeave Allocation` tla ON tla.leave_type = lt.name\n        AND YEAR(tla.from_date) = YEAR(NOW())\n        AND YEAR(tla.to_date) = YEAR(NOW())\n        AND tla.docstatus = 1\n        AND tla.employee = @LoggedIn Employee Code By Leaves Available Bayut@\nGROUP BY lt.name\nHAVING total <> 0 OR allocated <> 0;", 
+  "redirect_url": "#List/Leave%20Allocation/List", 
+  "report": "WR-00031", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "inner_box_list", 
+  "title": "Leaves Available Bayut Widget", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "My Team", 
+    "parent": "WID-00034", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "Leaves Available Bayut Widget", 
+  "widget_position": "Middle", 
+  "widget_wrapper_class": "col-lg-6 col-md-6", 
+  "width": "50%"
+ }, 
+ {
+  "background_color": null, 
+  "chart_type": "", 
+  "data_function": "assign_data", 
+  "depends_on": "get_config_by_name(\"E_HR_101_WIDGET\")", 
+  "disabled": 0, 
+  "display_order": 29, 
+  "docstatus": 0, 
+  "doctype": "Widget", 
+  "heading": "e-HR 101", 
+  "height": null, 
+  "icon": null, 
+  "modified": "2019-10-16 11:50:43.765698", 
+  "name": "WID-00035", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "query": "select document,title, DATE_FORMAT(creation, '%Y-%m-%d') AS `date`, \"guides\" as type from `tabPolicy Document` where parent = 'e-HR 101' ORDER BY idx DESC limit 5;", 
+  "redirect_url": "#query-report/Company Documents?document_type=e-HR 101", 
+  "report": "WR-00035", 
+  "roles": [], 
+  "tabs": [], 
+  "template": "calendar_list", 
+  "title": "e-HR 101", 
+  "type": "Plane", 
+  "widget_filter": [
+   {
+    "filter": "All", 
+    "parent": "WID-00035", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }, 
+   {
+    "filter": "My Team", 
+    "parent": "WID-00035", 
+    "parentfield": "widget_filter", 
+    "parenttype": "Widget"
+   }
+  ], 
+  "widget_name": "e-HR 101", 
+  "widget_position": "Right", 
+  "widget_wrapper_class": "col-lg-12 col-md-6 holiday-calendar-widget", 
+  "width": null
+ }
+]

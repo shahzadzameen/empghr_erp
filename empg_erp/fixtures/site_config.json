@@ -1,0 +1,41 @@
+[
+ {
+  "description": "show/hide leaves rules while adding Leave Type", 
+  "doc_type": "Leave Rules", 
+  "docstatus": 0, 
+  "doctype": "Site Config", 
+  "field": "leave_rules", 
+  "modified": "2019-01-25 16:31:28.197171", 
+  "name": "2ba7037ce3", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "value": "1"
+ }, 
+ {
+  "description": null, 
+  "doc_type": null, 
+  "docstatus": 0, 
+  "doctype": "Site Config", 
+  "field": "month_processing_date", 
+  "modified": "2019-02-06 11:28:30.349926", 
+  "name": "fe922becea", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "value": "20"
+ }, 
+ {
+  "description": null, 
+  "doc_type": null, 
+  "docstatus": 0, 
+  "doctype": "Site Config", 
+  "field": "restrict_leaves_date", 
+  "modified": "2019-02-06 11:28:24.093346", 
+  "name": "c56230dad9", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "value": "22"
+ }
+]

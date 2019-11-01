@@ -1,0 +1,8 @@
+.DS_Store
+*.pyc
+*.py~
+*.egg-info
+*.swp
+tags
+empg_erp/docs/current
+.env

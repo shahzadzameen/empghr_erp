@@ -1,0 +1,33 @@
+{
+    "css/empg_erp.min.css": [
+		"public/css/empg_erp.css",
+		"public/css/style.css",
+		"public/css/fullcalendar.css"
+    ],
+    "css/empg_erp.mustang.min.css": [
+    ],
+    "css/empg_erp.explorer.min.css": [
+    ],
+    "js/empg_erp.min.js" : [
+        "public/js/fullcalendar.min.js",
+        "public/js/empg_erp.js",
+        "public/js/jquery.mask.js",
+        "public/js/pagination.js",
+        "public/js/employee_common_customizations.js",
+        "public/js/announcement_customizations.js",
+        "public/js/leave_application_common.js",
+        "public/js/policy_document.js",
+        "public/js/attendance_customizations.js",
+        "public/js/user_common_customizations.js"
+
+    ],
+    "js/empg_erp.mustang.min.js" : [
+        "public/js/employee_cusmoizations.js",
+        "public/js/leave_application.js",
+        "public/js/user_customizations.js",
+        "public/js/appraisal_probation_actions.js"
+    ],
+    "js/empg_erp.explorer.min.js" : [
+        "public/js/byt_leave_application.js"
+    ]
+}

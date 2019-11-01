@@ -1,0 +1,19 @@
+{
+ "creation": "2019-03-20 18:44:47.675222", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Plan", 
+ "idx": 0, 
+ "mappings": [
+  {
+   "enabled": 1, 
+   "mapping": "ZN Employee Line Manager to ERPNext Line Manager"
+  }
+ ], 
+ "modified": "2019-03-20 20:13:04.260377", 
+ "modified_by": "Administrator", 
+ "module": "EMPG Employee", 
+ "name": "EMPGHR Employee Line Manager Pull", 
+ "owner": "Administrator", 
+ "plan_name": "EMPGHR Employee Line Manager Pull", 
+ "postprocess_method": ""
+}

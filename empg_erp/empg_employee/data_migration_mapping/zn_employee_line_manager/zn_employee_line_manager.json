@@ -1,0 +1,25 @@
+{
+ "creation": "2019-03-08 11:40:53.841549", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "reports_to", 
+   "remote_fieldname": "reports_to"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Employee", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee Line Manager", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employee_line_manager_pull_id", 
+ "modified": "2019-03-08 11:54:13.616767", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Line Manager", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "employee", 
+ "remote_primary_key": "id"
+}

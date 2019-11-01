@@ -1,0 +1,25 @@
+<div class="panel border-1px-solid-black">
+   <div class="panel-heading panel-height-dashboard">
+       <div class="row">
+           <div class="col-xs-12 text-center">
+               <div>{{ heading }}</div>
+           <div class="huge font-size-25 font-weight-bold">{{ widget_data[0].total }}</div></div>
+       </div>
+       <div class="row text-center">
+            <div class="centeralize-widget-text text-center">
+                <div class="row">
+                    {% for data in widget_data_rows %}
+                        <div class="dashboard-widget-box-inner"><span class="font-weight-bold box_count">{{ data.value }}</span>{{ data.title }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+   </div>
+   <a href="{{ redirect_url }}">
+       <div class="panel-footer bg-primary" style="background-color: {{ background_color }}">
+           <span class="pull-left">View Details</span>
+           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+           <div class="clearfix"></div>
+       </div>
+   </a>
+</div>

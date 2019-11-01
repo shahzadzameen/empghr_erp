@@ -1,0 +1,50 @@
+{
+ "creation": "2019-02-14 21:35:40.461375", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employee", 
+   "remote_fieldname": "employee"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "leave_type", 
+   "remote_fieldname": "leave_type"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "from_date", 
+   "remote_fieldname": "from_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "to_date", 
+   "remote_fieldname": "to_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "new_leaves_allocated", 
+   "remote_fieldname": "new_leaves_allocated"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "docstatus", 
+   "remote_fieldname": "docstatus"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Leave Allocation", 
+ "local_primary_key": "id", 
+ "mapping_name": "ZN Employee Leaves Allocation", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employee_leaves_pull_id", 
+ "modified": "2019-02-14 21:35:43.621681", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Leaves Allocation", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "leave_allocation", 
+ "remote_primary_key": "id"
+}

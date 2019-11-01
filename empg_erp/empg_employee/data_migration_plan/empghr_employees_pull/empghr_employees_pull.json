@@ -1,0 +1,18 @@
+{
+ "creation": "2019-02-22 12:41:16.955135", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Plan", 
+ "idx": 0, 
+ "mappings": [
+  {
+   "enabled": 1, 
+   "mapping": "ZN Employee to ERPNext Employee"
+  }
+ ], 
+ "modified": "2019-03-08 17:50:09.424539", 
+ "modified_by": "Administrator", 
+ "module": "EMPG Employee", 
+ "name": "EMPGHR Employees Pull", 
+ "owner": "Administrator", 
+ "plan_name": "EMPGHR Employees Pull"
+}

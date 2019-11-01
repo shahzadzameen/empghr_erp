@@ -1,0 +1,56 @@
+<div class="dashboard_wid-daily-shift text-center">
+        <div id="emp-turnover-bchart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </div>
+    
+    <script>
+    Highcharts.chart('emp-turnover-bchart', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Monthly Turnover'
+        },
+        xAxis: {
+            categories: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec'
+            ],
+            crosshair: true
+        },
+        credits: {
+            enabled: false
+        },
+        yAxis: {
+            min: 0,
+            tickInterval: 5,
+            title: {
+                text: 'Turnover'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: {{ widget_data }}
+    });
+    </script>

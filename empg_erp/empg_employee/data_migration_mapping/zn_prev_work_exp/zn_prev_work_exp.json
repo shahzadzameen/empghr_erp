@@ -1,0 +1,80 @@
+{
+ "creation": "2019-02-08 17:16:56.936900", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parent", 
+   "remote_fieldname": "parent"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parenttype", 
+   "remote_fieldname": "parenttype"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parentfield", 
+   "remote_fieldname": "parentfield"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "company_name", 
+   "remote_fieldname": "company_name"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "company_website", 
+   "remote_fieldname": "company_website"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "designation", 
+   "remote_fieldname": "designation"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "from_date", 
+   "remote_fieldname": "from_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "to_date", 
+   "remote_fieldname": "to_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "reason_for_leaving", 
+   "remote_fieldname": "reason_for_leaving"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "referrer_name", 
+   "remote_fieldname": "referrer_name"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "referrer_contact", 
+   "remote_fieldname": "referrer_contact"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "referrer_email", 
+   "remote_fieldname": "referrer_email"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Employee External Work History", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Prev Work Exp", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employee_prev_work_exp_pull_id", 
+ "modified": "2019-02-15 14:22:46.421729", 
+ "modified_by": "Administrator", 
+ "name": "ZN Prev Work Exp", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "experience", 
+ "remote_primary_key": "id"
+}

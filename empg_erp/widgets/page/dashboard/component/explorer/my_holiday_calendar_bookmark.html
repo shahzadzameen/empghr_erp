@@ -1,0 +1,28 @@
+<h4 class="">{{ heading }}</h4>
+<div class="dashboard_bottom_div mana_mod_box">
+    <ul id="holiday-list">
+        {% if widget_data|length > 0 %}
+            {% for data in widget_data %}
+                {% if data.type == "visa_expiry" %}
+                    <li title ="" class='font-weight-bold text-uppercase' >
+                        {{ data.description }}
+                        <span class="pull-right">{{ data.holiday_date }}</span>
+                    </li>
+                {% endif %}
+                {% if data.type == "holiday" %}
+                    <li title ="" class='font-weight-bold text-uppercase' >
+                        {{ data.description }} ({{ data.holiday_date }})
+                    </li>
+                {% endif %}
+                
+            {% endfor %}
+        {% endif %}
+
+        {% if widget_data|length == 0 %}
+            <p class='no-holiday text-center'>No Record found yet</p>
+        {% endif %}
+    </ul>
+    {% if widget_data|length > 0 %}
+        <a href="{{redirect_url}}" target="_blank" class="annoucement-link view_link">View More <i class="fa fa-angle-double-right"></i></a>
+    {% endif %}
+</div>

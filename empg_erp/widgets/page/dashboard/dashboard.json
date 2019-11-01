@@ -1,0 +1,19 @@
+{
+ "content": null, 
+ "creation": "2016-05-23 15:45:35.124068", 
+ "docstatus": 0, 
+ "doctype": "Page", 
+ "idx": 0, 
+ "modified": "2019-07-19 12:53:40.831678", 
+ "modified_by": "Administrator", 
+ "module": "Widgets", 
+ "name": "dashboard", 
+ "owner": "Administrator", 
+ "page_name": "Dashboard", 
+ "roles": [], 
+ "script": null, 
+ "standard": "Yes", 
+ "style": null, 
+ "system_page": 0, 
+ "title": "Dashboard"
+}

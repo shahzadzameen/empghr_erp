@@ -1,0 +1,18 @@
+{
+ "creation": "2019-02-13 20:59:52.151570", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Plan", 
+ "idx": 0, 
+ "mappings": [
+  {
+   "enabled": 1, 
+   "mapping": "ZN Employee Personal Contact"
+  }
+ ], 
+ "modified": "2019-02-13 20:59:52.151570", 
+ "modified_by": "Administrator", 
+ "module": "EMPG Employee", 
+ "name": "EMPGHR Employee Personal Contact Pull", 
+ "owner": "Administrator", 
+ "plan_name": "EMPGHR Employee Personal Contact Pull"
+}

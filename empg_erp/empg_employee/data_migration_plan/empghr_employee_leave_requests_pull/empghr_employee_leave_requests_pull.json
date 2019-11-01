@@ -1,0 +1,18 @@
+{
+ "creation": "2019-02-22 12:41:18.442476", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Plan", 
+ "idx": 0, 
+ "mappings": [
+  {
+   "enabled": 1, 
+   "mapping": "ZN Employee Leave Requests"
+  }
+ ], 
+ "modified": "2019-03-08 11:42:06.538309", 
+ "modified_by": "Administrator", 
+ "module": "EMPG Employee", 
+ "name": "EMPGHR Employee Leave Requests Pull", 
+ "owner": "Administrator", 
+ "plan_name": "EMPGHR Employee Leave Requests Pull"
+}

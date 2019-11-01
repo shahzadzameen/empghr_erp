@@ -1,0 +1,66 @@
+<div class="dashboard_wid-daily-shift border-black">
+        <div id="calendar"></div>
+    </div>
+<script>
+$(function() {
+    // page is now ready, initialize the calendar...
+    $('#calendar').fullCalendar({
+        dayRender: function (date, cell) {
+            var cell_date = cell.attr('data-date');
+            $('.fc-day-top[data-date=' + cell_date + ']').attr('title','No Roster exist for this date');
+        },
+        // put your options and callbacks here
+        eventRender: function(eventObj, $el, view) {
+            var dateString = eventObj.start.format("YYYY-MM-DD");
+            var elem = $(view.el[0]).find('.fc-day[data-date=' + dateString + ']');
+            $('.fc-day-top[data-date=' + dateString + ']').css("color", eventObj.color).attr('title',eventObj.description);
+            $('.fc-day-top[data-date=' + dateString + '] span').css("color", eventObj.color);
+            elem.prop("title",eventObj.description);
+            /* $el.popover({
+                //title: "Day Status: "+eventObj.title,
+                content: eventObj.description,
+                trigger: 'hover',
+                placement: 'top',
+                container: 'body'
+            });*/
+        },
+        eventSources: [
+            // your event source
+            {
+                events: {{ widget_data }}
+                //color: 'black',  an option!
+                //textColor: 'yellow' // an option!
+            }
+            // any other event sources...
+        ],
+        header: {
+            left: '',
+            center: 'title',
+            right: ''
+        },
+        editable: false,
+            //aspectRatio: 1.5\n
+    });
+
+    $(".fc-event-container").remove();
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

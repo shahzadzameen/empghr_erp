@@ -1,0 +1,25 @@
+<h4 class="">{{ heading }}</h4>
+<div class="dashboard_bottom_div announcement-list">
+    <ul id="announcement-list" class="attachment-list">
+            {% if widget_data|length > 0 %}
+            {% for data in widget_data %}
+                
+            <li title="{{ data.title }}"><a href= "{{ data.document }}" target="_blank" class="no-hover-underline">
+                    {{ data.title }}<span class="display-block font-weight-normal">
+                </span></a> 
+                <a href= "#Form/Announcement/{{ data.title }}" target="_blank" class="announcment-paperclip">
+                    <i class="fa fa-paperclip"></i>
+                </a>
+            </li>
+                
+            {% endfor %}
+        {% endif %}
+
+        {% if widget_data|length == 0 %}
+            <p class='no-holiday text-center'>No Record found yet</p>
+        {% endif %}
+    </ul>
+    {% if widget_data|length > 0 %}
+        <a href="{{redirect_url}}" target="_blank" class="annoucement-link view_link">View More <i class="fa fa-angle-double-right"></i></a>
+    {% endif %}
+</div>

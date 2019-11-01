@@ -1,0 +1,40 @@
+{
+ "creation": "2019-02-14 17:23:09.117537", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "shift_type", 
+   "remote_fieldname": "shift_type"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employee", 
+   "remote_fieldname": "employee"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "from_date", 
+   "remote_fieldname": "from_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "to_date", 
+   "remote_fieldname": "to_date"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Shift Request", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee Roster to ERPNext Shift", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employee_weekly_roster_into_erpnext_shifts_pull_id", 
+ "modified": "2019-02-14 19:55:54.990069", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Roster to ERPNext Shift", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "roster", 
+ "remote_primary_key": "id"
+}

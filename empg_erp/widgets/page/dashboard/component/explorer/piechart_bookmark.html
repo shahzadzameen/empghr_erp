@@ -1,0 +1,65 @@
+<div class="dashboard_wid-daily-shift text-center">
+	<div class="border-dashboard" >
+		<span class="widget-heading">{{ heading }}</span>
+		<div id="gender-piechart" style="min-width: 310px; margin: 0 auto"></div>
+	</div>
+</div>
+
+<script>
+// Radialize the colors
+Highcharts.setOptions({
+    colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
+        return {
+            radialGradient: {
+                cx: 0.5,
+                cy: 0.3,
+                r: 0.7
+            },
+            stops: [
+                [0, color],
+                [1, Highcharts.Color(color).brighten(-0.3).get("rgb")] // darken
+            ]
+        };
+    })
+});
+
+// Build the chart
+Highcharts.chart("gender-piechart", {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: "pie",
+width: 400,
+            height: 300
+    },
+    credits: {
+        enabled: false
+    },
+    title: {
+        text: ""
+    },
+    tooltip: {
+        pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+    },
+    plotOptions: {
+        pie: {
+
+                dataLabels: {
+                    overflow: "crawlUp"
+                }
+            },
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+                    connectorColor: "silver"
+                }
+            }
+    },
+    series: [{
+        name: "Percentage",
+        data: {{ widget_data }}
+    }]
+});
+</script>

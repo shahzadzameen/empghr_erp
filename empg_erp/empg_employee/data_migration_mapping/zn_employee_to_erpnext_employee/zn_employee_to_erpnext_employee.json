@@ -1,0 +1,160 @@
+{
+ "creation": "2019-02-22 12:41:16.074911", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "user_id", 
+   "remote_fieldname": "email"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "first_name", 
+   "remote_fieldname": "firstname"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "last_name", 
+   "remote_fieldname": "lastname"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "gender", 
+   "remote_fieldname": "gender"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "date_of_birth", 
+   "remote_fieldname": "dob"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "date_of_joining", 
+   "remote_fieldname": "doj"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employee_number", 
+   "remote_fieldname": "employee_number"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "office_region", 
+   "remote_fieldname": "office_region"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "office_sub_region", 
+   "remote_fieldname": "office_sub_region"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "office_city", 
+   "remote_fieldname": "office_city"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "office_location", 
+   "remote_fieldname": "office_location"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employement_type", 
+   "remote_fieldname": "employement_type"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "cnic", 
+   "remote_fieldname": "cnic"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "years_of_experience", 
+   "remote_fieldname": "years_of_experience"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "department", 
+   "remote_fieldname": "department"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "designation", 
+   "remote_fieldname": "designation"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "job_title", 
+   "remote_fieldname": "job_title"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "division", 
+   "remote_fieldname": "division"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "standardized_designation", 
+   "remote_fieldname": "standardized_designation"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "designation_category", 
+   "remote_fieldname": "designation_category"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employment_type", 
+   "remote_fieldname": "employment_type"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "nationality", 
+   "remote_fieldname": "nationality"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "marital_status", 
+   "remote_fieldname": "marital_status"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "blood_group", 
+   "remote_fieldname": "blood_group"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "religion", 
+   "remote_fieldname": "religion"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "salutation", 
+   "remote_fieldname": "salutation"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "final_confirmation_date", 
+   "remote_fieldname": "date_of_probation_completion"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "father_name", 
+   "remote_fieldname": "father_name"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Employee", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee to ERPNext Employee", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employees_pull_id", 
+ "modified": "2019-03-08 17:50:09.485797", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee to ERPNext Employee", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "employee", 
+ "remote_primary_key": "id"
+}

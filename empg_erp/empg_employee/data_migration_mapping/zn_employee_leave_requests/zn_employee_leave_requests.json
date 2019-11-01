@@ -1,0 +1,90 @@
+{
+ "creation": "2019-02-22 12:41:16.365606", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employee", 
+   "remote_fieldname": "employee"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "leave_type", 
+   "remote_fieldname": "leave_type"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "from_date", 
+   "remote_fieldname": "from_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "to_date", 
+   "remote_fieldname": "to_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "half_day", 
+   "remote_fieldname": "half_day"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "half_day_date", 
+   "remote_fieldname": "half_day_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "hourly", 
+   "remote_fieldname": "hourly"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "hours", 
+   "remote_fieldname": "hours"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "hourly_day_date", 
+   "remote_fieldname": "hourly_day_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "leave_approver", 
+   "remote_fieldname": "leave_approver"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "status", 
+   "remote_fieldname": "status"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "posting_date", 
+   "remote_fieldname": "posting_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "leave_approver_comments", 
+   "remote_fieldname": "leave_approver_comments"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "docstatus", 
+   "remote_fieldname": "docstatus"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Leave Application", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee Leave Requests", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employee_line_manager_pull_id", 
+ "modified": "2019-03-08 11:50:32.768585", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Leave Requests", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "leaves", 
+ "remote_primary_key": "id"
+}

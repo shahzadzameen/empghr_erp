@@ -1,0 +1,65 @@
+{
+ "creation": "2019-03-14 12:23:45.554609", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employee", 
+   "remote_fieldname": "employee"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "year", 
+   "remote_fieldname": "year"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "month", 
+   "remote_fieldname": "month"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "value", 
+   "remote_fieldname": "value"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "instance", 
+   "remote_fieldname": "instance"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "penalty", 
+   "remote_fieldname": "penalty"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "attendance_policy_rules", 
+   "remote_fieldname": "attendance_policy_rules"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "type", 
+   "remote_fieldname": "type"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "comments", 
+   "remote_fieldname": "comments"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Employee Attendance Penalties", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee Penalties to ERPNext Penalties", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_attendance_penalty_pull_id", 
+ "modified": "2019-03-14 16:33:59.178271", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Penalties to ERPNext Penalties", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "penalties", 
+ "remote_primary_key": "id"
+}

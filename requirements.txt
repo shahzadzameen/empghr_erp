@@ -1,1 +1,3 @@
 frappe
+mysql-connector
+python-dotenv

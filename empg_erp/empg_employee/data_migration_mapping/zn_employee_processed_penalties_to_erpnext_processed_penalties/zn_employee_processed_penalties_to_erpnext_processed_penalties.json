@@ -1,0 +1,35 @@
+{
+ "creation": "2019-03-14 16:28:48.573638", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employee", 
+   "remote_fieldname": "p_employee"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "month", 
+   "remote_fieldname": "p_month"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "year", 
+   "remote_fieldname": "p_year"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Attendance Penalties Processed", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee Processed Penalties to ERPNext Processed Penalties", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_attendance_processed_penalty_pull_id", 
+ "modified": "2019-03-15 11:42:07.092858", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Processed Penalties to ERPNext Processed Penalties", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "penalties", 
+ "remote_primary_key": "id"
+}

@@ -1,0 +1,55 @@
+{
+ "creation": "2019-02-13 20:59:44.184139", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parent", 
+   "remote_fieldname": "parent"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parentfield", 
+   "remote_fieldname": "parentfield"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parenttype", 
+   "remote_fieldname": "parenttype"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "ext", 
+   "remote_fieldname": "ext"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "fax", 
+   "remote_fieldname": "fax"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "phone", 
+   "remote_fieldname": "phone"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "type", 
+   "remote_fieldname": "type"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Employee Contact", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee Personal Contact", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employee_personal_contact_pull_id", 
+ "modified": "2019-02-13 20:59:53.729843", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Personal Contact", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "p_contact", 
+ "remote_primary_key": "id"
+}

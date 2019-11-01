@@ -1,0 +1,70 @@
+{
+ "creation": "2019-02-22 12:41:15.984396", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "employee", 
+   "remote_fieldname": "employee"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "status", 
+   "remote_fieldname": "status"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "leave_type", 
+   "remote_fieldname": "leave_type"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "attendance_date", 
+   "remote_fieldname": "attendance_date"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "company", 
+   "remote_fieldname": "company"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "check_in", 
+   "remote_fieldname": "check_in"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "check_out", 
+   "remote_fieldname": "check_out"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "late_arrival", 
+   "remote_fieldname": "late_arrival"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "left_early", 
+   "remote_fieldname": "left_early"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "working_hours", 
+   "remote_fieldname": "working_hours"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Attendance", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee Attendance", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employee_line_manager_pull_id", 
+ "modified": "2019-03-08 12:59:00.207850", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Attendance", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "attendance", 
+ "remote_primary_key": "id"
+}

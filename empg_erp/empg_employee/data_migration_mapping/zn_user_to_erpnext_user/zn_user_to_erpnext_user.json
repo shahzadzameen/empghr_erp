@@ -1,0 +1,55 @@
+{
+ "creation": "2019-02-08 17:16:56.844860", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "email", 
+   "remote_fieldname": "email"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "first_name", 
+   "remote_fieldname": "firstname"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "last_name", 
+   "remote_fieldname": "lastname"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "gender", 
+   "remote_fieldname": "gender"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "birth_date", 
+   "remote_fieldname": "dob"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "time_zone", 
+   "remote_fieldname": "time_zone"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "send_welcome_email", 
+   "remote_fieldname": "send_welcome_email"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "User", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN User to ERPNext User", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_users_pull_id", 
+ "modified": "2019-02-15 14:41:53.882300", 
+ "modified_by": "Administrator", 
+ "name": "ZN User to ERPNext User", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "User", 
+ "remote_primary_key": "id"
+}

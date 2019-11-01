@@ -1,0 +1,60 @@
+{
+ "creation": "2019-02-13 20:58:19.372648", 
+ "docstatus": 0, 
+ "doctype": "Data Migration Mapping", 
+ "fields": [
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parent", 
+   "remote_fieldname": "parent"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parentfield", 
+   "remote_fieldname": "parentfield"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "parenttype", 
+   "remote_fieldname": "parenttype"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "ext", 
+   "remote_fieldname": "ext"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "fax", 
+   "remote_fieldname": "fax"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "phone", 
+   "remote_fieldname": "phone"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "type", 
+   "remote_fieldname": "type"
+  }, 
+  {
+   "is_child_table": 0, 
+   "local_fieldname": "email", 
+   "remote_fieldname": "email"
+  }
+ ], 
+ "idx": 0, 
+ "local_doctype": "Employee Contact", 
+ "local_primary_key": "name", 
+ "mapping_name": "ZN Employee Work Contact", 
+ "mapping_type": "Pull", 
+ "migration_id_field": "empghr_employee_prev_work_exp_pull_id", 
+ "modified": "2019-02-13 21:24:39.627767", 
+ "modified_by": "Administrator", 
+ "name": "ZN Employee Work Contact", 
+ "owner": "Administrator", 
+ "page_length": 10, 
+ "remote_objectname": "w_contact", 
+ "remote_primary_key": "id"
+}

@@ -1,0 +1,544 @@
+[
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee to ERPNext Employee", 
+    "parent": "EMPGHR Employees Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-03-08 17:50:09.424539", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employees Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employees Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Prev Work Exp", 
+    "parent": "EMPGHR Employee Prev Work Exp Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-02-15 14:22:46.380665", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Prev Work Exp Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Prev Work Exp Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Roster to ERPNext Shift", 
+    "parent": "EMPGHR Employee Weekly Roster into ERPNext Shifts Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-02-14 19:55:53.396680", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Weekly Roster into ERPNext Shifts Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": " EMPGHR Employee Weekly Roster into ERPNext Shifts Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Leaves Allocation", 
+    "parent": "EMPGHR Employee Leaves Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-02-14 21:35:41.763407", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Leaves Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Leaves Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN User to ERPNext User", 
+    "parent": "EMPGHR Users Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-02-15 14:41:53.759169", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Users Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Users Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "Item to Hub Item", 
+    "parent": "Hub Sync", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2018-08-19 22:20:25.644602", 
+  "module": "Hub Node", 
+  "name": "Hub Sync", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "Hub Sync", 
+  "postprocess_method": "erpnext.hub_node.api.item_sync_postprocess", 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "Milestone to Project", 
+    "parent": "GitHub Sync", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }, 
+   {
+    "enabled": 1, 
+    "mapping": "Issue to Task", 
+    "parent": "GitHub Sync", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2017-10-20 11:48:54.496123", 
+  "module": "ERPNext Integrations", 
+  "name": "GitHub Sync", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "GitHub Sync", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "Event to GCalendar", 
+    "parent": "GCalendar Sync", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }, 
+   {
+    "enabled": 1, 
+    "mapping": "GCalendar to Event", 
+    "parent": "GCalendar Sync", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2018-05-18 14:38:43.559026", 
+  "module": "Integrations", 
+  "name": "GCalendar Sync", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "GCalendar Sync", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Education to ERPNext Employee Education", 
+    "parent": "EMPGHR Employee Education Details Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-24 15:01:46.651527", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Education Details Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Education Details Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Skills", 
+    "parent": "EMPGHR Employee Skills Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-28 15:24:13.891518", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Skills Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Skills Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Internal Work History", 
+    "parent": "EMPGHR Employee Internal Work History Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-28 16:48:21.376706", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Internal Work History Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Internal Work History Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Training and Certification", 
+    "parent": "EMPGHR Employee Training and Certifications Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-28 17:00:44.401468", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Training and Certifications Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Training and Certifications Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Disability", 
+    "parent": "EMPGHR Employee Disability Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-28 17:38:09.997761", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Disability Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Disability Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Dependant Details", 
+    "parent": "EMPGHR Employee Dependant Detail Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-28 17:45:54.795928", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Dependant Detail Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Dependant Detail Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Emergency Contact", 
+    "parent": "EMPGHR Employee Emergency Contact Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-28 18:22:52.919937", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Emergency Contact Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Emergency Contact Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Perm Address", 
+    "parent": "EMPGHR Employee Perm Address Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-28 18:39:17.776813", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Perm Address Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Perm Address Pull ", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Perm Address", 
+    "parent": "EMPGHR Employee Current Address Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-01-28 18:48:04.690522", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Current Address Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Current Address Pull ", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Attendance", 
+    "parent": "EMPGHR Employee Attendance Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-02-01 17:55:16.806352", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Attendance Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Attendance Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Work Contact", 
+    "parent": "EMPGHR Employee Contact Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-02-13 20:58:23.159159", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Contact Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Contact Pull ", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Personal Contact", 
+    "parent": "EMPGHR Employee Personal Contact Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-02-13 20:59:52.151570", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Personal Contact Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Personal Contact Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Leave Requests", 
+    "parent": "EMPGHR Employee Leave Requests Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-03-08 11:42:06.538309", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Leave Requests Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Leave Requests Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parent": "EMPGHR Employee Line Manager Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-03-08 18:14:45.404793", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Employee Line Manager Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Employee Line Manager Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Penalties to ERPNext Penalties", 
+    "parent": "EMPGHR Attendance Penalty Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-03-14 16:33:59.138407", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Attendance Penalty Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Attendance Penalty Pull ", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Data Migration Plan", 
+  "mappings": [
+   {
+    "enabled": 1, 
+    "mapping": "ZN Employee Processed Penalties to ERPNext Processed Penalties", 
+    "parent": "EMPGHR Attendance Processed Penalty Pull", 
+    "parentfield": "mappings", 
+    "parenttype": "Data Migration Plan"
+   }
+  ], 
+  "modified": "2019-03-15 11:42:07.045485", 
+  "module": "EMPG Employee", 
+  "name": "EMPGHR Attendance Processed Penalty Pull", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "plan_name": "EMPGHR Attendance Processed Penalty Pull", 
+  "postprocess_method": null, 
+  "preprocess_method": null
+ }
+]

@@ -1,0 +1,26 @@
+{% widget_wrapper_object = frappe.utils.get_config_by_name("WIDGET_WRAPPER_OBJECT") %}
+
+<div class="container" style="{{ widget_wrapper_object.wrapper_style }}">
+    <div id="dashboard" class="row {{ widget_wrapper_object.middle_width }}">
+        {% for widget in show_widgets.middle %}
+            {% if (widget.show_widget == true) %}
+                <div class="{{ widget.widget_wrapper_class }}" data-name="{{ widget.title }}">
+                    <div class="text-center dashboard-loader-div mb-5 p-30 dashboard-border">
+                        {{ loadIcon }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="dashboard-right-panel {{ widget_wrapper_object.right_width }}">
+        {% for widget in show_widgets.right %}
+            {% if (widget.show_widget == true) %}
+                <div class="{{ widget.widget_wrapper_class }}" data-name="{{ widget.title }}">
+                    <div class="text-center dashboard-loader-div mb-5 p-30">
+                        {{ loadIcon }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

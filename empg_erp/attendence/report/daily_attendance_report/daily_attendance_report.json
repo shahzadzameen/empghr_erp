@@ -1,0 +1,39 @@
+{
+ "add_total_row": 0, 
+ "creation": "2019-03-25 10:28:31.765220", 
+ "disabled": 0, 
+ "docstatus": 0, 
+ "doctype": "Report", 
+ "idx": 0, 
+ "is_standard": "Yes", 
+ "json": "{\"add_total_row\": 0}", 
+ "modified": "2019-03-25 10:28:47.907116", 
+ "modified_by": "Administrator", 
+ "module": "Attendence", 
+ "name": "Daily Attendance Report", 
+ "owner": "Administrator", 
+ "prepared_report": 0, 
+ "ref_doctype": "Attendance", 
+ "report_name": "Daily Attendance Report", 
+ "report_type": "Script Report", 
+ "roles": [
+  {
+   "role": "HR Manager"
+  }, 
+  {
+   "role": "System Manager"
+  }, 
+  {
+   "role": "HR User"
+  }, 
+  {
+   "role": "Employee"
+  }, 
+  {
+   "role": "Line Manager"
+  }, 
+  {
+   "role": "Attendance Manager"
+  }
+ ]
+}

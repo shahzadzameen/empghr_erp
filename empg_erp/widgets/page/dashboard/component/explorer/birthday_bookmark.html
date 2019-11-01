@@ -1,0 +1,27 @@
+<h4 class="">{{heading}}</h4>
+<div class="dashboard_bottom_div text-center">
+    <ul id="birthday-list">
+        {% set date_right = "" %}
+        {% if widget_data|length > 0 %}
+            {% for data in widget_data %}
+                {% if data.type == "birthday" %}
+                    <p><i class="fa fa-birthday-cake fa-3x"></i></p>
+                    <p class='text-uppercase'>{{data.date}}</p>
+                    {% set flag = flag + 1 %}
+                {% endif %}
+                {% if data.type == "upcoming" %}
+                    {% set date_right = "<span class='pull-right'>{{data.date}}</span>" %}
+                {% endif %}
+                <li title ="{{ data.fullname }}" class='font-weight-bold text-uppercase'> {{ data.fullname }} {{ date_right }}  </li>
+                
+            {% endfor %}
+        {% endif %}
+
+        {% if widget_data|length == 0 %}
+            <p class='no-holiday text-center'>No Record found yet</p>
+        {% endif %}
+    </ul>
+    {% if widget_data|length > 0 %}
+        <a href="{{redirect_url}}" target="_blank" class="annoucement-link view_link">View More <i class="fa fa-angle-double-right"></i></a>
+    {% endif %}
+</div>

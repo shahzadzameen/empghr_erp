@@ -1,0 +1,31 @@
+[
+ {
+  "apply_style": 1, 
+  "apply_text_styles": 1, 
+  "background_color": null, 
+  "background_image": null, 
+  "bootstrap": null, 
+  "css": ".footer-powered, .footer-subscribe{\n    display:none;\n}\n.navbar-brand.ellipsis{\n    padding-top:0px;\n}", 
+  "custom": 0, 
+  "docstatus": 0, 
+  "doctype": "Website Theme", 
+  "font_size": "14px", 
+  "footer_color": "", 
+  "footer_text_color": "", 
+  "heading_style": "", 
+  "heading_webfont": "", 
+  "js": "$('.footer-powered, .footer-subscribe').remove();", 
+  "link_color": "", 
+  "modified": "2019-04-01 15:56:43.542042", 
+  "module": "Website", 
+  "name": "Standard", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "text_color": "", 
+  "text_webfont": "", 
+  "theme": "Standard", 
+  "top_bar_color": "", 
+  "top_bar_text_color": ""
+ }
+]

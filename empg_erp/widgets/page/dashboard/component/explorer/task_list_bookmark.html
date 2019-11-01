@@ -1,0 +1,17 @@
+<div class="border-dashboard dashboard_wid-daily-shift text-center">
+	<h4 class="">{{ heading }}</h4>
+	<div class="task-list-widget" style="max-height: 200px;overflow-y: auto;">
+		<ul>
+			{% if widget_data|length > 0 %}
+				{% for data in widget_data %}
+					<li>
+						{{ data.description }}
+					</li>
+				{% endfor %}
+			{% endif %}
+			{% if widget_data|length == 0 %}
+				<p class='no-holiday text-center'>You're up to date!</p>
+			{% endif %}
+		</ul>
+	</div>
+</div>

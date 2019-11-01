@@ -1,0 +1,2913 @@
+[
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "reports_to", 
+    "parent": "ZN Employee Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "reports_to"
+   }
+  ], 
+  "local_doctype": "Employee", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Line Manager", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_line_manager_pull_id", 
+  "modified": "2019-03-08 11:54:13.616767", 
+  "name": "ZN Employee Line Manager", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "employee", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": "{\"publish_in_hub\": 1}", 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "item_code", 
+    "parent": "Item to Hub Item", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "item_code"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "item_name", 
+    "parent": "Item to Hub Item", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "item_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "eval:frappe.db.get_value('Hub Settings' , 'Hub Settings', 'company_email')", 
+    "parent": "Item to Hub Item", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "hub_seller"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "image", 
+    "parent": "Item to Hub Item", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "image"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "image_list", 
+    "parent": "Item to Hub Item", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "image_list"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "item_group", 
+    "parent": "Item to Hub Item", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "item_group"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "hub_category", 
+    "parent": "Item to Hub Item", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "hub_category"
+   }
+  ], 
+  "local_doctype": "Item", 
+  "local_primary_key": null, 
+  "mapping_name": "Item to Hub Item", 
+  "mapping_type": "Push", 
+  "migration_id_field": "hub_sync_id", 
+  "modified": "2019-06-14 16:22:49.027825", 
+  "name": "Item to Hub Item", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "Hub Item", 
+  "remote_primary_key": "item_code"
+ }, 
+ {
+  "condition": "{\"repo\": \"frappe/erpnext\"}", 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "project_name", 
+    "parent": "Milestone to Project", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "title"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "notes", 
+    "parent": "Milestone to Project", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "description"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "status", 
+    "parent": "Milestone to Project", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "state"
+   }
+  ], 
+  "local_doctype": "Project", 
+  "local_primary_key": "project_name", 
+  "mapping_name": "Milestone to Project", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "github_sync_id", 
+  "modified": "2019-06-14 16:22:49.201779", 
+  "name": "Milestone to Project", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "Milestone", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": "{\"repo\":\"frappe/erpnext\"}", 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "subject", 
+    "parent": "Issue to Task", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "title"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "description", 
+    "parent": "Issue to Task", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "body"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "status", 
+    "parent": "Issue to Task", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "state"
+   }
+  ], 
+  "local_doctype": "Task", 
+  "local_primary_key": "name", 
+  "mapping_name": "Issue to Task", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "github_sync_id", 
+  "modified": "2019-06-14 16:22:49.273976", 
+  "name": "Issue to Task", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "Issue", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "subject", 
+    "parent": "Event to GCalendar", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "summary"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "description", 
+    "parent": "Event to GCalendar", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "description"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "starts_on", 
+    "parent": "Event to GCalendar", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "start_datetime"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "ends_on", 
+    "parent": "Event to GCalendar", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "end_datetime"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "all_day", 
+    "parent": "Event to GCalendar", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "all_day"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "repeat_this_event", 
+    "parent": "Event to GCalendar", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "repeat_this_event"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "name", 
+    "parent": "Event to GCalendar", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "name"
+   }
+  ], 
+  "local_doctype": "Event", 
+  "local_primary_key": "gcalendar_sync_id", 
+  "mapping_name": "Event to GCalendar", 
+  "mapping_type": "Push", 
+  "migration_id_field": "gcalendar_sync_id", 
+  "modified": "2019-06-14 16:22:49.463487", 
+  "name": "Event to GCalendar", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "Events", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "subject", 
+    "parent": "GCalendar to Event", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "summary"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "description", 
+    "parent": "GCalendar to Event", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "description"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "starts_on", 
+    "parent": "GCalendar to Event", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "start_datetime"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "ends_on", 
+    "parent": "GCalendar to Event", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "end_datetime"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "all_day", 
+    "parent": "GCalendar to Event", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "all_day"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "repeat_this_event", 
+    "parent": "GCalendar to Event", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "repeat_this_event"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "gcalendar_sync_id", 
+    "parent": "GCalendar to Event", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "id"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "owner", 
+    "parent": "GCalendar to Event", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "account"
+   }
+  ], 
+  "local_doctype": "Event", 
+  "local_primary_key": "gcalendar_sync_id", 
+  "mapping_name": "GCalendar to Event", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "gcalendar_sync_id", 
+  "modified": "2019-06-14 16:22:49.565544", 
+  "name": "GCalendar to Event", 
+  "page_length": 250, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "Events", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employee"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "status", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "status"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "leave_type", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "leave_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "attendance_date", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "attendance_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "company", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "company"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "check_in", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "check_in"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "check_out", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "check_out"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "late_arrival", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "late_arrival"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "left_early", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "left_early"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "working_hours", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "working_hours"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "shift_start_time", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "shift_start_time"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "shift_end_time", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "shift_end_time"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "attendance_status", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "attendance_status"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "docstatus", 
+    "parent": "ZN Employee Attendance", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "docstatus"
+   }
+  ], 
+  "local_doctype": "Attendance", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Attendance", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_attendance_pull_id", 
+  "modified": "2019-06-14 16:22:51.314032", 
+  "name": "ZN Employee Attendance", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "attendance", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "email", 
+    "parent": "ZN User to ERPNext User", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "email"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "first_name", 
+    "parent": "ZN User to ERPNext User", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "firstname"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "last_name", 
+    "parent": "ZN User to ERPNext User", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "lastname"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "gender", 
+    "parent": "ZN User to ERPNext User", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "gender"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "birth_date", 
+    "parent": "ZN User to ERPNext User", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "dob"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "time_zone", 
+    "parent": "ZN User to ERPNext User", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "time_zone"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "send_welcome_email", 
+    "parent": "ZN User to ERPNext User", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "send_welcome_email"
+   }
+  ], 
+  "local_doctype": "User", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN User to ERPNext User", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_users_pull_id", 
+  "modified": "2019-06-14 16:22:48.283860", 
+  "name": "ZN User to ERPNext User", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "User", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "user_id", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "email"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "first_name", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "firstname"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "last_name", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "lastname"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "gender", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "gender"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "date_of_birth", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "dob"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "date_of_joining", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "doj"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee_number", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employee_number"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_region", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_region"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_sub_region", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_sub_region"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_city", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_city"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_location", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_location"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employement_type", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employement_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "cnic", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "cnic"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "years_of_experience", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "years_of_experience"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "department", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "department"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "designation", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "designation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "job_title", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "job_title"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "division", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "division"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "standardized_designation", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "standardized_designation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "designation_category", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "designation_category"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employment_type", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employment_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "nationality", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "nationality"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "marital_status", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "marital_status"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "blood_group", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "blood_group"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "religion", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "religion"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "salutation", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "salutation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "final_confirmation_date", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "date_of_probation_completion"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "father_name", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "father_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "sub_department", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "sub_department"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "status", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "status"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "relieving_date", 
+    "parent": "ZN Employee to ERPNext Employee", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "relieving_date"
+   }
+  ], 
+  "local_doctype": "Employee", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee to ERPNext Employee", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employees_pull_id", 
+  "modified": "2019-06-14 16:22:47.302682", 
+  "name": "ZN Employee to ERPNext Employee", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "employee", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "company_name", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "company_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "company_website", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "company_website"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "designation", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "designation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "from_date", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "from_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "to_date", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "to_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "reason_for_leaving", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "reason_for_leaving"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "referrer_name", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "referrer_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "referrer_contact", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "referrer_contact"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "referrer_email", 
+    "parent": "ZN Prev Work Exp", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "referrer_email"
+   }
+  ], 
+  "local_doctype": "Employee External Work History", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Prev Work Exp", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_prev_work_exp_pull_id", 
+  "modified": "2019-06-14 16:22:47.726341", 
+  "name": "ZN Prev Work Exp", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "experience", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Work Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Work Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Work Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "ext", 
+    "parent": "ZN Employee Work Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "ext"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "fax", 
+    "parent": "ZN Employee Work Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "fax"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "phone", 
+    "parent": "ZN Employee Work Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "phone"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "type", 
+    "parent": "ZN Employee Work Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "email", 
+    "parent": "ZN Employee Work Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "email"
+   }
+  ], 
+  "local_doctype": "Employee Contact", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Work Contact", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_contact_pull_id", 
+  "modified": "2019-06-14 16:22:51.557178", 
+  "name": "ZN Employee Work Contact", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "w_contact", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Personal Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Personal Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Personal Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "ext", 
+    "parent": "ZN Employee Personal Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "ext"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "fax", 
+    "parent": "ZN Employee Personal Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "fax"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "phone", 
+    "parent": "ZN Employee Personal Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "phone"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "type", 
+    "parent": "ZN Employee Personal Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "type"
+   }
+  ], 
+  "local_doctype": "Employee Contact", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Personal Contact", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_personal_contact_pull_id", 
+  "modified": "2019-06-14 16:22:51.740797", 
+  "name": "ZN Employee Personal Contact", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "p_contact", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "shift_type", 
+    "parent": "ZN Employee Roster to ERPNext Shift", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "shift_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee", 
+    "parent": "ZN Employee Roster to ERPNext Shift", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employee"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "from_date", 
+    "parent": "ZN Employee Roster to ERPNext Shift", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "from_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "to_date", 
+    "parent": "ZN Employee Roster to ERPNext Shift", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "to_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "docstatus", 
+    "parent": "ZN Employee Roster to ERPNext Shift", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "docstatus"
+   }
+  ], 
+  "local_doctype": "Shift Request", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Roster to ERPNext Shift", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_weekly_roster_into_erpnext_shifts_pull_id", 
+  "modified": "2019-06-14 16:22:47.933653", 
+  "name": "ZN Employee Roster to ERPNext Shift", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "roster", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee", 
+    "parent": "ZN Employee Leaves Allocation", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employee"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "leave_type", 
+    "parent": "ZN Employee Leaves Allocation", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "leave_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "from_date", 
+    "parent": "ZN Employee Leaves Allocation", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "from_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "to_date", 
+    "parent": "ZN Employee Leaves Allocation", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "to_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "new_leaves_allocated", 
+    "parent": "ZN Employee Leaves Allocation", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "new_leaves_allocated"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "docstatus", 
+    "parent": "ZN Employee Leaves Allocation", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "docstatus"
+   }
+  ], 
+  "local_doctype": "Leave Allocation", 
+  "local_primary_key": "id", 
+  "mapping_name": "ZN Employee Leaves Allocation", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_leaves_pull_id", 
+  "modified": "2019-06-14 16:22:48.110865", 
+  "name": "ZN Employee Leaves Allocation", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "leave_allocation", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "user_id", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "email"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "first_name", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "firstname"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "gender", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "gender"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "date_of_birth", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "dob"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "date_of_joining", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "doj"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee_number", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employee_number"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_region", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_region"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_sub_region", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_sub_region"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_city", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_city"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_location", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_location"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "cnic", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "cnic"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "division", 
+    "parent": "ZN Employee to ERPNext Employee TEST", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "division"
+   }
+  ], 
+  "local_doctype": "Employee", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee to ERPNext Employee TEST", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employees_pull_id", 
+  "modified": "2019-02-15 13:51:03.685184", 
+  "name": "ZN Employee to ERPNext Employee TEST", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "id", 
+  "remote_primary_key": "employee"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employee"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "leave_type", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "leave_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "from_date", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "from_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "to_date", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "to_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "half_day", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "half_day"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "half_day_date", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "half_day_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "hourly", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "hourly"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "hours", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "hours"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "hourly_day_date", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "hourly_day_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "leave_approver", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "leave_approver"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "status", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "status"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "posting_date", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "posting_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "comments", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "comments"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "docstatus", 
+    "parent": "ZN Employee Leave Requests", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "docstatus"
+   }
+  ], 
+  "local_doctype": "Leave Application", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Leave Requests", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_leave_requests_pull_id", 
+  "modified": "2019-06-14 16:22:51.952358", 
+  "name": "ZN Employee Leave Requests", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "leaves", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": "{'name': ('=', frappe.db.get_single_value('Hub Settings', 'company'))}", 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "name", 
+    "parent": "Company to Hub Company", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "company_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "country", 
+    "parent": "Company to Hub Company", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "country"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "\"city\"", 
+    "parent": "Company to Hub Company", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "seller_city"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "eval:frappe.local.site", 
+    "parent": "Company to Hub Company", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "site_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "eval:frappe.session.user", 
+    "parent": "Company to Hub Company", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "user"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "company_logo", 
+    "parent": "Company to Hub Company", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "company_logo"
+   }
+  ], 
+  "local_doctype": "Company", 
+  "local_primary_key": null, 
+  "mapping_name": "Company to Hub Company", 
+  "mapping_type": "Push", 
+  "migration_id_field": "hub_sync_id", 
+  "modified": "2018-02-14 15:57:05.571142", 
+  "name": "Company to Hub Company", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "Hub Company", 
+  "remote_primary_key": "name"
+ }, 
+ {
+  "condition": "{'reference_doctype': 'Lead', 'user': frappe.db.get_single_value('Hub Settings', 'user'), 'status': 'Pending'}", 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "email_id", 
+    "parent": "Hub Message to Lead", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "email_id"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "lead_name", 
+    "parent": "Hub Message to Lead", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "lead_name"
+   }
+  ], 
+  "local_doctype": "Lead", 
+  "local_primary_key": "email_id", 
+  "mapping_name": "Hub Message to Lead", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "hub_sync_id", 
+  "modified": "2018-02-14 15:57:05.606597", 
+  "name": "Hub Message to Lead", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "Hub Message", 
+  "remote_primary_key": "name"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "school_univ", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "school_univ"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "qualification", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "qualification"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "level", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "level"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "year_of_passing", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "year_of_passing"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "class_per", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "class_per"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "maj_opt_subj", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "maj_opt_subj"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Education to ERPNext Employee Education", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }
+  ], 
+  "local_doctype": "Employee Education", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Education to ERPNext Employee Education", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_education_details_pull_id", 
+  "modified": "2019-06-14 16:22:49.710053", 
+  "name": "ZN Employee Education to ERPNext Employee Education", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "education", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Skills", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Skills", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Skills", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "title", 
+    "parent": "ZN Employee Skills", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "title"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "years_of_experience", 
+    "parent": "ZN Employee Skills", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "years_of_experience"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "compentency_level", 
+    "parent": "ZN Employee Skills", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "compentency_level"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "skill_last_used_year", 
+    "parent": "ZN Employee Skills", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "skill_last_used_year"
+   }
+  ], 
+  "local_doctype": "Skills", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Skills", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_skills_pull_id", 
+  "modified": "2019-06-14 16:22:49.894759", 
+  "name": "ZN Employee Skills", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "skill", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "department", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "department"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "from_date", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "from_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "to_date", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "to_date"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "job_title", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "job_title"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "designation", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "designation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "designation_category", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "designation_category"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "standardized_designation", 
+    "parent": "ZN Employee Internal Work History", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "standardized_designation"
+   }
+  ], 
+  "local_doctype": "Employee Internal Work History", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Internal Work History", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_internal_work_history_pull_id", 
+  "modified": "2019-06-14 16:22:50.062485", 
+  "name": "ZN Employee Internal Work History", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "history", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "course_name", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "course_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "course_level", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "course_level"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "course_offered_by", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "course_offered_by"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "description", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "description"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "certification_name", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "certification_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "issued_date", 
+    "parent": "ZN Employee Training and Certification", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "issued_date"
+   }
+  ], 
+  "local_doctype": "Employee Training and Certification", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Training and Certification", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_training_and_certifications_pull_id", 
+  "modified": "2019-06-14 16:22:50.188558", 
+  "name": "ZN Employee Training and Certification", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "certifications", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Disability", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Disability", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Disability", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "disability_type", 
+    "parent": "ZN Employee Disability", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "disability_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "disability", 
+    "parent": "ZN Employee Disability", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "disability"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "reason", 
+    "parent": "ZN Employee Disability", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "reason"
+   }
+  ], 
+  "local_doctype": "Employee Disability", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Disability", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_disability_pull_id", 
+  "modified": "2019-06-14 16:22:50.346465", 
+  "name": "ZN Employee Disability", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "disability", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Dependant Details", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Dependant Details", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Dependant Details", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "dependant_name", 
+    "parent": "ZN Employee Dependant Details", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "dependant_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "dependant_relation", 
+    "parent": "ZN Employee Dependant Details", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "dependant_relation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "dependant_dob", 
+    "parent": "ZN Employee Dependant Details", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "dependant_dob"
+   }
+  ], 
+  "local_doctype": "Employee Dependent Detail", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Dependant Details", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_dependant_detail_pull_id", 
+  "modified": "2019-06-14 16:22:50.516313", 
+  "name": "ZN Employee Dependant Details", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "dependants", 
+  "remote_primary_key": "name"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Emergency Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Emergency Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Emergency Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "emergency_contact_person", 
+    "parent": "ZN Employee Emergency Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "emergency_contact_person"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "emergency_contact_number", 
+    "parent": "ZN Employee Emergency Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "emergency_contact_number"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "relationship_to_employee", 
+    "parent": "ZN Employee Emergency Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "relationship_to_employee"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "contact_location", 
+    "parent": "ZN Employee Emergency Contact", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "contact_location"
+   }
+  ], 
+  "local_doctype": "Emergency Contact", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Emergency Contact", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_emergency_contact_pull_id", 
+  "modified": "2019-06-14 16:22:50.642948", 
+  "name": "ZN Employee Emergency Contact", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "contact", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parent", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parent"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parentfield", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parentfield"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "parenttype", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "parenttype"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "street_address", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "street_address"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "country", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "country"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "state", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "state"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "city", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "city"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "postal_code", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "postal_code"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "type", 
+    "parent": "ZN Employee Perm Address", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "type"
+   }
+  ], 
+  "local_doctype": "Employee Address", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Perm Address", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_current_address_pull_id", 
+  "modified": "2019-06-14 16:22:51.097949", 
+  "name": "ZN Employee Perm Address", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "address", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "user_id", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "email"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "first_name", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "firstname"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "last_name", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "lastname"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "gender", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "gender"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "date_of_birth", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "dob"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "date_of_joining", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "doj"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee_number", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employee_number"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_region", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_region"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_sub_region", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_sub_region"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_city", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_city"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "office_location", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "office_location"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employement_type", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employement_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "cnic", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "cnic"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "years_of_experience", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "years_of_experience"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "department", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "department"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "designation", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "designation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "job_title", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "job_title"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "division", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "division"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "standardized_designation", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "standardized_designation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "designation_category", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "designation_category"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employment_type", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employment_type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "nationality", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "nationality"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "marital_status", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "marital_status"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "blood_group", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "blood_group"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "religion", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "religion"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "salutation", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "salutation"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "final_confirmation_date", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "date_of_probation_completion"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "father_name", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "father_name"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "reports_to", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "reports_to"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "send_welcome_email", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "send_welcome_email"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "sub_department", 
+    "parent": "ZN Employee Line Manager to ERPNext Line Manager", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "sub_department"
+   }
+  ], 
+  "local_doctype": "Employee", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Line Manager to ERPNext Line Manager", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_employee_line_manager_pull_id", 
+  "modified": "2019-06-14 16:22:52.162985", 
+  "name": "ZN Employee Line Manager to ERPNext Line Manager", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "employee", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "employee"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "year", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "year"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "month", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "month"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "value", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "value"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "instance", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "instance"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "penalty", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "penalty"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "attendance_policy_rules", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "attendance_policy_rules"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "type", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "type"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "comments", 
+    "parent": "ZN Employee Penalties to ERPNext Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "comments"
+   }
+  ], 
+  "local_doctype": "Employee Attendance Penalties", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Penalties to ERPNext Penalties", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_attendance_penalty_pull_id", 
+  "modified": "2019-06-14 16:22:52.483261", 
+  "name": "ZN Employee Penalties to ERPNext Penalties", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "penalties", 
+  "remote_primary_key": "id"
+ }, 
+ {
+  "condition": null, 
+  "docstatus": 0, 
+  "doctype": "Data Migration Mapping", 
+  "fields": [
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "employee", 
+    "parent": "ZN Employee Processed Penalties to ERPNext Processed Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "p_employee"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "month", 
+    "parent": "ZN Employee Processed Penalties to ERPNext Processed Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "p_month"
+   }, 
+   {
+    "child_table_mapping": null, 
+    "is_child_table": 0, 
+    "local_fieldname": "year", 
+    "parent": "ZN Employee Processed Penalties to ERPNext Processed Penalties", 
+    "parentfield": "fields", 
+    "parenttype": "Data Migration Mapping", 
+    "remote_fieldname": "p_year"
+   }
+  ], 
+  "local_doctype": "Attendance Penalties Processed", 
+  "local_primary_key": "name", 
+  "mapping_name": "ZN Employee Processed Penalties to ERPNext Processed Penalties", 
+  "mapping_type": "Pull", 
+  "migration_id_field": "empghr_attendance_processed_penalty_pull_id", 
+  "modified": "2019-06-14 16:22:52.642600", 
+  "name": "ZN Employee Processed Penalties to ERPNext Processed Penalties", 
+  "page_length": 10, 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "remote_objectname": "penalties", 
+  "remote_primary_key": "id"
+ }
+]
